@@ -1,0 +1,9 @@
+
+MVP - minimum viable product
+
+Charakter ? laufen, springen, -> Bernard
+Waffen ? pistole, hüftfeuer, schießen
+Gegner ? explosionsgegner, spawner > Kain
+Animation ? walking cycle   -> Bernard
+Arena ? raum mit cover -> ab und zu was zusammenwürfeln
+Game controller ? scoreboard, game loop, aktiviert spawner > Kain
