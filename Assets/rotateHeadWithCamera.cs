@@ -8,13 +8,13 @@ public class rotateHeadWithCamera : MonoBehaviour
     public GameObject p3Camera;
     public GameObject p1Camera;
 
-    public GameObject oberarmL;
-    public GameObject oberarmR;
+    //public GameObject oberarmL;
+    //public GameObject oberarmR;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class rotateHeadWithCamera : MonoBehaviour
         if (p1Camera.activeSelf)
         {
             head.transform.forward = p1Camera.transform.forward;
-            oberarmL.transform.rotation= p1Camera.transform.eulerAngles.x;
+            //oberarmL.transform.rotation= p1Camera.transform.eulerAngles.x;
         }
         else
         {

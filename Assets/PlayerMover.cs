@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMover : MonoBehaviour {
+public class PlayerMover : MonoBehaviour
+{
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
@@ -12,8 +13,11 @@ public class PlayerMover : MonoBehaviour {
     private GameObject camera3rdPerson;
     [SerializeField]
     private GameObject camera1stPerson;
-    private bool camMode = true;
+    private bool firstPersonMode = true;
     private Camera cam;
+    public GameObject boneToMove; // the bone we need to ove to look up or down
+    public GameObject boneToMove2;
+    public GameObject boneToMove3;
 
 
     private Rigidbody rb;
@@ -55,9 +59,9 @@ public class PlayerMover : MonoBehaviour {
     //change from 3rd to first person
     public void changeCamera()
     {
-        camMode = !camMode;
+        firstPersonMode = !firstPersonMode;
 
-        if(camMode)
+        if (firstPersonMode)
         {
             camera1stPerson.SetActive(true);
             camera3rdPerson.SetActive(false);
@@ -66,7 +70,7 @@ public class PlayerMover : MonoBehaviour {
         }
         else
         {
-            camera3rdPerson.SetActive(true); 
+            camera3rdPerson.SetActive(true);
             camera1stPerson.SetActive(false);
             cam = camera3rdPerson.GetComponent<Camera>();
             cameraRotationLimit = 20f;
@@ -82,7 +86,7 @@ public class PlayerMover : MonoBehaviour {
 
     void PerformMovement()
     {
-        if(velocity != Vector3.zero)
+        if (velocity != Vector3.zero)
         {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);   //better than just add force
             //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
@@ -98,7 +102,10 @@ public class PlayerMover : MonoBehaviour {
             currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
 
             //Apply Rotation to the transform of our Camera
-            cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+            //cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+            boneToMove.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+            boneToMove2.transform.localEulerAngles = new Vector3(currentCameraRotationX/2 - 20, 0f, 0f); // soll die hälfte der brustrotation nehmen
+            boneToMove3.transform.localEulerAngles = new Vector3(currentCameraRotationX /4 - 147, 0f, 0f);
         }
     }
 
