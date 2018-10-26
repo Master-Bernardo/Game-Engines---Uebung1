@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float mouseSensitivty = 3f;
 
+    public Animator animator;
+
     private PlayerMover mover;
 
     void Start()
@@ -30,6 +32,21 @@ public class PlayerController : MonoBehaviour {
 
         //apply this movement
         mover.Move(_velocity);
+
+        if (_velocity.magnitude > 0.1)
+        {
+            Debug.Log("yep");
+            animator.SetBool("running", true);
+        }
+        else
+        {
+            animator.SetBool("running", false);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("attack");
+        }
 
 
         //Calculate Rotationas a 3D Vector: (turning around y axis only) the rest of the rotation is only on the camera
@@ -55,7 +72,7 @@ public class PlayerController : MonoBehaviour {
         //check for 3rd person Camera enabled
         if (Input.GetKeyDown(KeyCode.T))
         {
-            mover.changeCamera();
+            mover.ChangeCamera();
         }
     }
 }

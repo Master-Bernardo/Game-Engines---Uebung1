@@ -57,7 +57,7 @@ public class PlayerMover : MonoBehaviour
     }
 
     //change from 3rd to first person
-    public void changeCamera()
+    public void ChangeCamera()
     {
         firstPersonMode = !firstPersonMode;
 
@@ -73,7 +73,7 @@ public class PlayerMover : MonoBehaviour
             camera3rdPerson.SetActive(true);
             camera1stPerson.SetActive(false);
             cam = camera3rdPerson.GetComponent<Camera>();
-            cameraRotationLimit = 20f;
+            cameraRotationLimit = 40f;
         }
     }
 
@@ -82,6 +82,11 @@ public class PlayerMover : MonoBehaviour
     {
         PerformMovement();
         PerformRotation();
+    }
+
+    private void LateUpdate()
+    {
+        PerformCameraRotation();
     }
 
     void PerformMovement()
@@ -96,6 +101,10 @@ public class PlayerMover : MonoBehaviour
     void PerformRotation()
     {
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));  //Euler angles can take simple vector3´s and turn them into a quaternion
+    }
+
+    void PerformCameraRotation()
+    {
         if (cam != null)
         {
             currentCameraRotationX -= cameraRotationX;
@@ -104,8 +113,8 @@ public class PlayerMover : MonoBehaviour
             //Apply Rotation to the transform of our Camera
             //cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
             boneToMove.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
-            boneToMove2.transform.localEulerAngles = new Vector3(currentCameraRotationX/2 - 20, 0f, 0f); // soll die hälfte der brustrotation nehmen
-            boneToMove3.transform.localEulerAngles = new Vector3(currentCameraRotationX /4 - 147, 0f, 0f);
+            boneToMove2.transform.localEulerAngles = new Vector3(currentCameraRotationX / 2 - 20, 0f, 0f); // soll die hälfte der brustrotation nehmen
+            boneToMove3.transform.localEulerAngles = new Vector3(currentCameraRotationX / 4 - 147, 0f, 0f);
         }
     }
 
