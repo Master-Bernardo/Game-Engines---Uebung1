@@ -7,6 +7,23 @@ public class PlayerMover : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
     private float cameraRotationX = 0f;
+    private float distToGround = 1f;  //for grounded raycast - half the height of the character
+    private bool jump; //will we jump this frame?
+    bool sprint;
+
+    bool isGrounded;
+
+    //for movement
+    [SerializeField]
+    private float speed = 5f;
+    [SerializeField]
+    private float sprintSpeed = 10f;
+    [SerializeField]
+    private float maxSpeed = 5f;
+    [SerializeField]
+    private float maxSprintSpeed = 10f;
+    [SerializeField]
+    private float jumpForce = 10f;
 
     //Cameras
     [SerializeField]
@@ -22,13 +39,13 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody rb;
 
+
+
     //for the XRot CameraClamp
     [SerializeField]
     private float cameraRotationLimit = 85f;
     private float currentCameraRotationX = 0f;
 
-    [SerializeField]
-    private float jumpForce;
 
     void Start()
     {
@@ -38,9 +55,10 @@ public class PlayerMover : MonoBehaviour
 
     //Setter
 
-    public void Move(Vector3 _velocity)
+    public void Move(Vector3 _velocity, bool sprint)
     {
         velocity = _velocity;
+        this.sprint = sprint;
     }
     public void Rotate(Vector3 _rotation)
     {
@@ -53,7 +71,24 @@ public class PlayerMover : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(transform.up * jumpForce);
+        //check if is grounded
+        if(IsGrounded())
+        {
+            jump = true;
+        }
+       
+    }
+
+    public bool IsGrounded()
+    {
+        if (Physics.Raycast(transform.position, -transform.up, distToGround + 0.1f))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     //change from 3rd to first person
@@ -82,20 +117,37 @@ public class PlayerMover : MonoBehaviour
     {
         PerformMovement();
         PerformRotation();
+       
     }
 
     private void LateUpdate()
     {
         PerformCameraRotation();
+       // UpdateAnimationParameters();
     }
 
     void PerformMovement()
     {
-        if (velocity != Vector3.zero)
+        if (IsGrounded())
         {
-            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);   //better than just add force
-            //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
+            if (velocity != Vector3.zero)
+            {
+                if (sprint)
+                {
+                    if(rb.velocity.magnitude<maxSprintSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * sprintSpeed);   //better than just add force - or rb.MovePosition?
+                }
+                else
+                {
+                    if (rb.velocity.magnitude < maxSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
+                }
+            }
+            if (jump)
+            {
+                rb.AddForce(transform.up * jumpForce * 1000);
+                jump = false;
+            }
         }
+        
     }
 
     void PerformRotation()
@@ -117,5 +169,4 @@ public class PlayerMover : MonoBehaviour
             boneToMove3.transform.localEulerAngles = new Vector3(currentCameraRotationX / 4 - 147, 0f, 0f);
         }
     }
-
 }
