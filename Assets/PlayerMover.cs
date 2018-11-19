@@ -71,17 +71,12 @@ public class PlayerMover : MonoBehaviour
 
     public void Jump()
     {
-        //check if is grounded
-        if(IsGrounded())
-        {
-            jump = true;
-        }
-       
+        jump = true;
     }
 
     public bool IsGrounded()
     {
-        if (Physics.Raycast(transform.position, -transform.up, distToGround + 0.1f))
+        if (Physics.Raycast(transform.position, -transform.up, distToGround + 0.4f))
         {
             return true;
         }
@@ -117,7 +112,6 @@ public class PlayerMover : MonoBehaviour
     {
         PerformMovement();
         PerformRotation();
-       
     }
 
     private void LateUpdate()
@@ -128,8 +122,6 @@ public class PlayerMover : MonoBehaviour
 
     void PerformMovement()
     {
-        if (IsGrounded())
-        {
             if (velocity != Vector3.zero)
             {
                 if (sprint)
@@ -145,9 +137,7 @@ public class PlayerMover : MonoBehaviour
             {
                 rb.AddForce(transform.up * jumpForce * 1000);
                 jump = false;
-            }
-        }
-        
+            } 
     }
 
     void PerformRotation()
