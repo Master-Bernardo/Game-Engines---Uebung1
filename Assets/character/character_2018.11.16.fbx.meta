@@ -139,12 +139,84 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 00000000000000000000000000000000000000000000000001000000000000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 0
+      - path: Rig
+        weight: 1
+      - path: Rig/Steuerbone
+        weight: 1
+      - path: Rig/Steuerbone/Becken
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
+        weight: 0
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Rig|AttackWithSword
@@ -167,12 +239,84 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/Steuerbone
+        weight: 1
+      - path: Rig/Steuerbone/Becken
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
+        weight: 0
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Rig|HoldSword
@@ -195,12 +339,84 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/Steuerbone
+        weight: 1
+      - path: Rig/Steuerbone/Becken
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
+        weight: 0
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
+        weight: 1
+      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Rig|Idle

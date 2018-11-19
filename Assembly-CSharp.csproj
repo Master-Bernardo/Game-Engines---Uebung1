@@ -60,13 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\GalaxyBox1\examplescene.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\PlayerMover.cs" />
+    <Compile Include="Assets\Rifle.cs" />
+    <Compile Include="Assets\Sword.cs" />
     <Compile Include="Assets\Volumetric Lights\Scripts\VolumetricLight.cs" />
     <Compile Include="Assets\Volumetric Lights\Scripts\VolumetricLightRenderer.cs" />
     <Compile Include="Assets\Volumetric Lights\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\Volumetric Lights\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
+    <Compile Include="Assets\Weapon.cs" />
+    <Compile Include="Assets\WeaponSystem.cs" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
     <None Include="Assets\Volumetric Lights\Shaders\BilateralBlur.shader" />
     <None Include="Assets\Volumetric Lights\Shaders\BlitAdd.shader" />
