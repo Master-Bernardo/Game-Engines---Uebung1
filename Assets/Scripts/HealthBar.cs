@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     public float currentHealthRatio;
 
     private RectTransform rect;
+    private Canvas canvas;
     private float initGaugeWidth;
 
 
@@ -15,13 +16,30 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         rect = (RectTransform) healthBarGauge.transform;
+        canvas = GetComponent<Canvas>();
         initGaugeWidth = rect.sizeDelta.x;
+        currentHealthRatio = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rect.sizeDelta = new Vector2(initGaugeWidth * currentHealthRatio, rect.sizeDelta.y);
+        if(currentHealthRatio >= 1)
+        {
+            if(canvas)
+            {
+                canvas.enabled = false;
+            }
+        }
+        else
+        {
+            if(canvas)
+            {
+                canvas.enabled = true;
+            }
+            rect.sizeDelta = new Vector2(initGaugeWidth * currentHealthRatio, rect.sizeDelta.y);
+        }
+        
     }
 
     public void SetCurrentHealthRatio(float ratio)

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float maxHealth; 
+    public float scoreValue;
 
     private float currentHealth;
     private HealthBar healthBar;
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        GameController.Instance.AddScore(scoreValue);
         Destroy(gameObject);
     }
 

@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &808885648793993321 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8606874554660211116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &808885647862492734
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,7 +23,7 @@ GameObject:
   - component: {fileID: 808885647862492711}
   m_Layer: 0
   m_Name: ExploderEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  scoreValue: 50
   target: {fileID: 0}
   attackDamage: 1
   explosionRadius: 3
@@ -152,12 +159,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!224 &808885648793993321 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8606874554660211116}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8606874554660211116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,6 +194,21 @@ PrefabInstance:
     - target: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955548562836015553, guid: 852efd77327a92a418b516876869b8e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955548562836015558, guid: 852efd77327a92a418b516876869b8e0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955548562836015559, guid: 852efd77327a92a418b516876869b8e0,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

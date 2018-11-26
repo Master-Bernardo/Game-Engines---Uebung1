@@ -20,10 +20,20 @@ public class ExploderEnemy : SeekerEnemy
     public override void Update()
     {
         base.Update();
-    
-        if(Vector3.Distance(transform.position, target.position) < explosionRadius)
+
+        if(target)
         {
-            Explode();
+            if(Vector3.Distance(transform.position, target.position) < explosionRadius)
+            {
+                Explode();
+            }
+        }
+        else
+        {
+            if(GameController.Instance.player)
+            {
+                target = GameController.Instance.player.transform;
+            }
         }
     }
 
@@ -42,14 +52,11 @@ public class ExploderEnemy : SeekerEnemy
 
             if(hit.collider.tag == "Player")
             {
-                // Insert Player damaging logic when ready
-
-                //hit.collider.GetComponent<Player>().TakeDamage(AttackDamage);
+                hit.collider.GetComponent<PlayerBehavior>().TakeDamage(attackDamage);
             }
         }
 
         Instantiate(explosionParticle, transform.position, transform.rotation);
-
         Die();
     }
 }
