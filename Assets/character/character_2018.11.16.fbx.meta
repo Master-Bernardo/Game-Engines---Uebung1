@@ -13,8 +13,8 @@ ModelImporter:
     100014: Daumen.R.002
     100016: Finger.L.001
     100018: Finger.L.002
-    100020: Finger.R.002
-    100022: Finger.R.003
+    100020: Finger.R.001
+    100022: Finger.R.002
     100024: Fuss.L.001
     100026: Fuss.L.002
     100028: Fuss.L.002_end
@@ -23,15 +23,15 @@ ModelImporter:
     100034: Fuss.R.002_end
     100036: Hals
     100038: Hand.L
-    100040: Hand.R.001
+    100040: Hand.R
     100042: Kopf
-    100044: Mesh
-    100046: Mitte
-    100048: Oberarm.L
-    100050: Oberarm.R
-    100052: Oberschenkel.L
-    100054: Oberschenkel.R
-    100056: Rig
+    100044: Mitte
+    100046: Oberarm.L
+    100048: Oberarm.R
+    100050: Oberschenkel.L
+    100052: Oberschenkel.R
+    100054: PlayerCharacterMesh
+    100056: PlayerCharacterRig
     100058: Schulter.L
     100060: Schulter.R
     100062: Steuerbone
@@ -49,8 +49,8 @@ ModelImporter:
     400014: Daumen.R.002
     400016: Finger.L.001
     400018: Finger.L.002
-    400020: Finger.R.002
-    400022: Finger.R.003
+    400020: Finger.R.001
+    400022: Finger.R.002
     400024: Fuss.L.001
     400026: Fuss.L.002
     400028: Fuss.L.002_end
@@ -59,15 +59,15 @@ ModelImporter:
     400034: Fuss.R.002_end
     400036: Hals
     400038: Hand.L
-    400040: Hand.R.001
+    400040: Hand.R
     400042: Kopf
-    400044: Mesh
-    400046: Mitte
-    400048: Oberarm.L
-    400050: Oberarm.R
-    400052: Oberschenkel.L
-    400054: Oberschenkel.R
-    400056: Rig
+    400044: Mitte
+    400046: Oberarm.L
+    400048: Oberarm.R
+    400050: Oberschenkel.L
+    400052: Oberschenkel.R
+    400054: PlayerCharacterMesh
+    400056: PlayerCharacterRig
     400058: Schulter.L
     400060: Schulter.R
     400062: Steuerbone
@@ -76,20 +76,20 @@ ModelImporter:
     400068: Unterbein.L
     400070: Unterbein.R
     2100000: No Name
-    4300000: Mesh
-    7400000: Rig|attackTesing
-    7400002: Rig|AttackWithSword
-    7400004: Rig|HoldSword
-    7400006: Rig|HoldWeapon.001
-    7400008: Rig|Idle
-    7400010: Rig|Jump
-    7400012: Rig|Jump.001
-    7400014: Rig|HoldWeapon
-    7400016: Rig|RunForward
-    7400018: Rig|RunSidewards
-    7400020: Rig|SprintForward
+    4300000: PlayerCharacterMesh
+    7400000: PlayerCharacterRig|attackTesing
+    7400002: PlayerCharacterRig|AttackWithSword
+    7400004: PlayerCharacterRig|ChangeWeapon
+    7400006: PlayerCharacterRig|HoldSword
+    7400008: PlayerCharacterRig|Idle
+    7400010: PlayerCharacterRig|Jump
+    7400012: PlayerCharacterRig|HoldWeapon
+    7400014: PlayerCharacterRig|ReloadWeapon
+    7400016: PlayerCharacterRig|RunForward
+    7400018: PlayerCharacterRig|RunSidewards
+    7400020: PlayerCharacterRig|SprintForward
     9500000: //RootNode
-    13700000: Mesh
+    13700000: PlayerCharacterMesh
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -110,7 +110,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -119,8 +119,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rig|attackTesing
-      takeName: Rig|attackTesing
+      name: PlayerCharacterRig|attackTesing
+      takeName: PlayerCharacterRig|attackTesing
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -139,88 +139,44 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000000000000000000000000000000000000000000001000000000000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Mesh
-        weight: 0
-      - path: Rig
-        weight: 1
-      - path: Rig/Steuerbone
-        weight: 1
-      - path: Rig/Steuerbone/Becken
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
-        weight: 0
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|AttackWithSword
-      takeName: Rig|AttackWithSword
+      name: PlayerCharacterRig|AttackWithSword
+      takeName: PlayerCharacterRig|AttackWithSword
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PlayerCharacterRig|ChangeWeapon
+      takeName: PlayerCharacterRig|ChangeWeapon
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -239,88 +195,16 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Mesh
-        weight: 1
-      - path: Rig
-        weight: 1
-      - path: Rig/Steuerbone
-        weight: 1
-      - path: Rig/Steuerbone/Becken
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
-        weight: 0
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|HoldSword
-      takeName: Rig|HoldSword
+      name: PlayerCharacterRig|HoldSword
+      takeName: PlayerCharacterRig|HoldSword
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -339,88 +223,16 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Mesh
-        weight: 1
-      - path: Rig
-        weight: 1
-      - path: Rig/Steuerbone
-        weight: 1
-      - path: Rig/Steuerbone/Becken
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Hals/Kopf
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Daumen.L.001/Daumen.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.L/Oberarm.L/Unterarm.L/Hand.L/Finger.L.001/Finger.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Daumen.R.001/Daumen.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Bauch.002/Mitte/Brust/Schulter.R/Oberarm.R/Unterarm.R/Hand.R.001/Finger.R.002/Finger.R.003
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.L/Unterbein.L/Fuss.L.001/Fuss.L.002/Fuss.L.002_end
-        weight: 0
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002
-        weight: 1
-      - path: Rig/Steuerbone/Becken/Oberschenkel.R/Unterbein.R/Fuss.R.001/Fuss.R.002/Fuss.R.002_end
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: cd60b6fca74949e459512fd0c2fffb89, type: 2}
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|Idle
-      takeName: Rig|Idle
+      name: PlayerCharacterRig|Idle
+      takeName: PlayerCharacterRig|Idle
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -431,9 +243,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -447,8 +259,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|Jump
-      takeName: Rig|Jump
+      name: PlayerCharacterRig|Jump
+      takeName: PlayerCharacterRig|Jump
       firstFrame: 0
       lastFrame: 5
       wrapMode: 0
@@ -460,8 +272,8 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -475,8 +287,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|HoldWeapon
-      takeName: Rig|HoldWeapon
+      name: PlayerCharacterRig|HoldWeapon
+      takeName: PlayerCharacterRig|HoldWeapon
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -503,21 +315,21 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|RunForward
-      takeName: Rig|RunForward
+      name: PlayerCharacterRig|ReloadWeapon
+      takeName: PlayerCharacterRig|ReloadWeapon
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -531,8 +343,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|RunSidewards
-      takeName: Rig|RunSidewards
+      name: PlayerCharacterRig|RunForward
+      takeName: PlayerCharacterRig|RunForward
       firstFrame: 0
       lastFrame: 10
       wrapMode: 0
@@ -543,9 +355,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -559,8 +371,36 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|SprintForward
-      takeName: Rig|SprintForward
+      name: PlayerCharacterRig|RunSidewards
+      takeName: PlayerCharacterRig|RunSidewards
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PlayerCharacterRig|SprintForward
+      takeName: PlayerCharacterRig|SprintForward
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -571,9 +411,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -624,441 +464,21 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-    human:
-    - boneName: Becken
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Oberschenkel.L
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Oberschenkel.R
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Unterbein.L
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Unterbein.R
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fuss.L.001
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fuss.R.001
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bauch.002
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Mitte
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Hals
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Kopf
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Schulter.L
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Schulter.R
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Oberarm.L
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Oberarm.R
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Unterarm.L
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Unterarm.R
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Hand.L
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Hand.R.001
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fuss.L.002
-      humanName: LeftToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fuss.R.002
-      humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Daumen.L.001
-      humanName: Left Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Daumen.L.002
-      humanName: Left Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Finger.L.001
-      humanName: Left Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Finger.L.002
-      humanName: Left Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Daumen.R.001
-      humanName: Right Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Daumen.R.002
-      humanName: Right Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Finger.R.002
-      humanName: Right Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Finger.R.003
-      humanName: Right Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Brust
-      humanName: UpperChest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    skeleton:
-    - name: character_2018.11.16(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Mesh
-      parentName: character_2018.11.16(Clone)
-      position: {x: -0, y: 0.85368085, z: -4.618436e-10}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 99.999985, y: 99.999985, z: 99.999985}
-    - name: Rig
-      parentName: character_2018.11.16(Clone)
-      position: {x: -0, y: 0.8576105, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 38.6258, y: 38.6258, z: 38.6258}
-    - name: Steuerbone
-      parentName: Rig
-      position: {x: -0, y: -0.0050748615, z: -0.019438094}
-      rotation: {x: -6.123233e-17, y: 0.000000059604645, z: 1, w: 3.3087225e-24}
-      scale: {x: 1, y: 0.9999992, z: 0.9999992}
-    - name: Becken
-      parentName: Steuerbone
-      position: {x: -0.0000000017727856, y: -0.005426123, z: 0.021100542}
-      rotation: {x: -0.00000002274503, y: -0.85395557, z: 0.520346, w: 0.00000003732758}
-      scale: {x: 1, y: 1.0000008, z: 1.0000008}
-    - name: Oberschenkel.L
-      parentName: Becken
-      position: {x: -0.0023614354, y: 0.0014503726, z: 0.00063311146}
-      rotation: {x: -0.022796834, y: 0.9693968, z: 0.24438044, w: 0.0053218277}
-      scale: {x: 1.0000018, y: 1.0000006, z: 0.99999946}
-    - name: Unterbein.L
-      parentName: Oberschenkel.L
-      position: {x: -0, y: 0.009692475, z: 5.9604643e-10}
-      rotation: {x: -0.021618567, y: 0.00044168858, z: -0.0112507325, w: 0.99970293}
-      scale: {x: 1.0000002, y: 1.000001, z: 0.9999999}
-    - name: Fuss.L.001
-      parentName: Unterbein.L
-      position: {x: 5.587935e-10, y: 0.010834869, z: 0}
-      rotation: {x: -0.04667803, y: -0.83072966, z: -0.5520103, w: -0.05471898}
-      scale: {x: 1, y: 1.000001, z: 1.0000005}
-    - name: Fuss.L.002
-      parentName: Fuss.L.001
-      position: {x: -2.9802322e-10, y: 0.0028184229, z: 4.4703483e-10}
-      rotation: {x: -0.18209116, y: 0.10500742, z: -0.0048363, w: 0.9776466}
-      scale: {x: 0.99999946, y: 1.0000014, z: 1.0000002}
-    - name: Fuss.L.002_end
-      parentName: Fuss.L.002
-      position: {x: -5.55124e-10, y: 0.0010579848, z: 0.0000000011686763}
-      rotation: {x: -0, y: 0.00000017881392, z: 0.00000014714895, w: 1}
-      scale: {x: 1.0000001, y: 1.0000008, z: 1.000001}
-    - name: Bauch.002
-      parentName: Becken
-      position: {x: 2.7197942e-11, y: -0.00052669185, z: -0.00031111296}
-      rotation: {x: -0.95867896, y: -0.000000031511977, z: 0.00000002237927, w: 0.28449005}
-      scale: {x: 1, y: 0.9999992, z: 0.99999917}
-    - name: Mitte
-      parentName: Bauch.002
-      position: {x: -7.105427e-17, y: 0.0040978203, z: -1.4901184e-10}
-      rotation: {x: -0.18164071, y: 0.00023668045, z: -0.0028793714, w: 0.98336077}
-      scale: {x: 1, y: 1.0000004, z: 1.0000002}
-    - name: Brust
-      parentName: Mitte
-      position: {x: -3.2741808e-13, y: 0.0044705183, z: -8.994675e-11}
-      rotation: {x: 0.14978938, y: -0.0003294957, z: 0.0028702386, w: 0.9887137}
-      scale: {x: 0.99999976, y: 0.9999998, z: 0.9999996}
-    - name: Hals
-      parentName: Brust
-      position: {x: 1.192797e-12, y: 0.0042814724, z: 1.4811077e-10}
-      rotation: {x: 0.055408195, y: 0.00000012107193, z: 0.0000000030468073, w: 0.9984638}
-      scale: {x: 1.0000001, y: 0.9999999, z: 1}
-    - name: Kopf
-      parentName: Hals
-      position: {x: -2.049809e-12, y: 0.0018840588, z: 3.031687e-10}
-      rotation: {x: 0.092393495, y: -0.00000007387601, z: 0.000000012300186, w: 0.9957226}
-      scale: {x: 0.9999998, y: 0.9999997, z: 0.9999999}
-    - name: Schulter.L
-      parentName: Brust
-      position: {x: -0.0010384566, y: 0.003154821, z: 0.0013160441}
-      rotation: {x: -0.085734315, y: -0.094383545, z: 0.76934814, w: 0.6259751}
-      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
-    - name: Oberarm.L
-      parentName: Schulter.L
-      position: {x: 1.3969838e-10, y: 0.0038751604, z: 9.685754e-10}
-      rotation: {x: 0.12925231, y: 0.0031574373, z: -0.086597465, w: 0.9878182}
-      scale: {x: 0.9999989, y: 1.0000018, z: 1.0000001}
-    - name: Unterarm.L
-      parentName: Oberarm.L
-      position: {x: 4.4703483e-10, y: 0.007480511, z: 0.0000000011315568}
-      rotation: {x: 0.029426308, y: 0.013477262, z: 0.0016208754, w: 0.99947476}
-      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999992}
-    - name: Hand.L
-      parentName: Unterarm.L
-      position: {x: 3.352761e-10, y: 0.006310717, z: 1.8859282e-10}
-      rotation: {x: -0.06423809, y: -0.049387388, z: -0.18316953, w: 0.9797364}
-      scale: {x: 1.0000015, y: 0.9999989, z: 0.9999989}
-    - name: Finger.L.001
-      parentName: Hand.L
-      position: {x: 4.4718618e-10, y: 0.0009708828, z: 2.4214386e-10}
-      rotation: {x: 0.07998827, y: 0.044478666, z: 0.1552441, w: 0.9836274}
-      scale: {x: 1.0000014, y: 1.0000013, z: 1.0000005}
-    - name: Finger.L.002
-      parentName: Finger.L.001
-      position: {x: -3.3710057e-10, y: 0.0013040482, z: 3.7252902e-11}
-      rotation: {x: 0.3595499, y: -0.8511918, z: 0.058399443, w: 0.3778701}
-      scale: {x: 0.9999994, y: 0.99999976, z: 1.0000008}
-    - name: Daumen.L.001
-      parentName: Hand.L
-      position: {x: -0.00038827918, y: 0.0001040934, z: 0.0005154241}
-      rotation: {x: 0.21974121, y: -0.94538087, z: -0.051799625, w: 0.23512918}
-      scale: {x: 1.0000004, y: 1.000001, z: 0.9999994}
-    - name: Daumen.L.002
-      parentName: Daumen.L.001
-      position: {x: -3.9115547e-10, y: 0.0015364413, z: 2.0489097e-10}
-      rotation: {x: 0.11108351, y: -0.18493396, z: 0.10352178, w: 0.9709496}
-      scale: {x: 0.9999994, y: 0.99999934, z: 1.0000011}
-    - name: Schulter.R
-      parentName: Brust
-      position: {x: 0.0009885925, y: 0.003154821, z: 0.001316044}
-      rotation: {x: -0.08882306, y: 0.0947634, z: -0.7673097, w: 0.62798584}
-      scale: {x: 1.0000006, y: 1.0000007, z: 0.99999976}
-    - name: Oberarm.R
-      parentName: Schulter.R
-      position: {x: 0.0000000016856938, y: 0.003877402, z: 5.2154064e-10}
-      rotation: {x: -0.13176087, y: 0.0029037297, z: -0.08365503, w: -0.9877412}
-      scale: {x: 0.9999988, y: 1.0000006, z: 0.9999991}
-    - name: Unterarm.R
-      parentName: Oberarm.R
-      position: {x: -2.339948e-10, y: 0.007480507, z: -6.519258e-11}
-      rotation: {x: 0.02954895, y: -0.013466048, z: -0.0017520505, w: 0.9994711}
-      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000001}
-    - name: Hand.R.001
-      parentName: Unterarm.R
-      position: {x: -2.0372681e-11, y: 0.006310715, z: -3.3760442e-11}
-      rotation: {x: -0.06423807, y: 0.04938715, z: 0.18316947, w: 0.9797363}
-      scale: {x: 1.0000007, y: 0.9999995, z: 0.9999994}
-    - name: Finger.R.002
-      parentName: Hand.R.001
-      position: {x: 5.6858834e-10, y: 0.000970882, z: 9.313225e-11}
-      rotation: {x: 0.08146815, y: -0.049781986, z: -0.17260207, w: 0.98035365}
-      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000001}
-    - name: Finger.R.003
-      parentName: Finger.R.002
-      position: {x: -3.160789e-10, y: 0.0012919181, z: 7.4505804e-11}
-      rotation: {x: -0.34377825, y: -0.8595999, z: 0.05573172, w: -0.37389636}
-      scale: {x: 0.9999995, y: 1.000001, z: 1.0000023}
-    - name: Daumen.R.001
-      parentName: Hand.R.001
-      position: {x: 0.00038828157, y: 0.000104093255, z: 0.00051542313}
-      rotation: {x: -0.21974511, y: -0.94538236, z: -0.051785745, w: -0.23512241}
-      scale: {x: 0.99999976, y: 1.0000013, z: 0.99999946}
-    - name: Daumen.R.002
-      parentName: Daumen.R.001
-      position: {x: 2.6077032e-10, y: 0.0015364408, z: -2.2351741e-10}
-      rotation: {x: 0.11108283, y: 0.18493402, z: -0.10352165, w: 0.97094965}
-      scale: {x: 0.9999996, y: 0.9999989, z: 1.0000002}
-    - name: Oberschenkel.R
-      parentName: Becken
-      position: {x: 0.0023428136, y: 0.0014503723, z: 0.0006331118}
-      rotation: {x: 0.022065658, y: 0.96941346, z: 0.24438529, w: -0.005151139}
-      scale: {x: 1.0000006, y: 0.99999946, z: 0.9999999}
-    - name: Unterbein.R
-      parentName: Oberschenkel.R
-      position: {x: -2.7939676e-10, y: 0.009691804, z: 1.4901161e-10}
-      rotation: {x: -0.021610733, y: -0.00053116865, z: 0.013530349, w: 0.9996748}
-      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
-    - name: Fuss.R.001
-      parentName: Unterbein.R
-      position: {x: -4.4703483e-10, y: 0.010837212, z: -0.0000000016391277}
-      rotation: {x: 0.045357104, y: -0.8307986, z: -0.5520919, w: 0.053953186}
-      scale: {x: 0.99999964, y: 1.0000004, z: 1.0000005}
-    - name: Fuss.R.002
-      parentName: Fuss.R.001
-      position: {x: -0.0000000012293457, y: 0.002818421, z: 0.00000000230968}
-      rotation: {x: -0.18209125, y: -0.10500738, z: 0.0048361756, w: 0.9776466}
-      scale: {x: 0.99999934, y: 1.0000005, z: 1.0000007}
-    - name: Fuss.R.002_end
-      parentName: Fuss.R.002
-      position: {x: 1.8970382e-10, y: 0.0010579842, z: -7.204886e-10}
-      rotation: {x: -0, y: -0.00000023841858, z: -0.000000009313226, w: 1}
-      scale: {x: 1.0000001, y: 1.0000012, z: 1.0000011}
+    human: []
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
     legTwist: 0.5
-    armStretch: 0.07
+    armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

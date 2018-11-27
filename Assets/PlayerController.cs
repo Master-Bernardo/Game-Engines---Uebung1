@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour {
             if (movAdder > 0) movAdder -= 0.1f;
             else movAdder = 0;
             _zMov += movAdder;
-            if (mover.IsGrounded()) mover.Move(_velocity, false);
+            //if (mover.IsGrounded())
+                mover.Move(_velocity, false);
         }
 
         //animations

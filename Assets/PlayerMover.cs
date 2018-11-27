@@ -126,11 +126,12 @@ public class PlayerMover : MonoBehaviour
             {
                 if (sprint)
                 {
-                    if(rb.velocity.magnitude<maxSprintSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * sprintSpeed);   //better than just add force - or rb.MovePosition?
+                    //if(rb.velocity.magnitude<maxSprintSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * sprintSpeed);   //better than just add force - or rb.MovePosition?
+                    if (rb.velocity.magnitude < maxSprintSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * sprintSpeed);
                 }
                 else
                 {
-                    if (rb.velocity.magnitude < maxSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
+                    if (rb.velocity.magnitude < maxSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
                 }
             }
             if (jump)
