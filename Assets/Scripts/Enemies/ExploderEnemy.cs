@@ -20,21 +20,28 @@ public class ExploderEnemy : SeekerEnemy
     public override void Update()
     {
         base.Update();
-
-        if(target)
+        if (alive)
         {
-            if(Vector3.Distance(transform.position, target.position) < explosionRadius)
+            if (target)
             {
-                Explode();
+                if (Vector3.Distance(transform.position, target.position) < explosionRadius)
+                {
+                    Explode();
+                }
+            }
+            else
+            {
+                if (GameController.Instance.player)
+                {
+                    target = GameController.Instance.player.transform;
+                }
             }
         }
         else
         {
-            if(GameController.Instance.player)
-            {
-                target = GameController.Instance.player.transform;
-            }
+
         }
+
     }
 
     public void Explode()

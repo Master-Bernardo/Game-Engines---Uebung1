@@ -33,42 +33,47 @@ public class EscapeShooterEnemy : Enemy
     public override void Update()
     {
         base.Update();
-
-        if (target == null)
+        if (alive)
         {
-            target = GameController.Instance.player.transform;
-        }
-        else
-        {
-            transform.forward = (target.position - transform.position); // always look at player
-            gun.forward = ((target.position ) - gun.position);
-
-            //derGegner flieht immer auf 0.75% seiner shooting range und schießt, wenn der Spieler ausserhalb seiner Shooting Range ist, verfolgt er ihn
-            if ((target.position - transform.position).magnitude < 0.75*shootingRange)
+            if (target == null)
             {
-                agent.isStopped = false;
-                Vector3 escapePoint = transform.position - (target.position - transform.position);
-                agent.SetDestination(escapePoint);
-            }
-            else if ((target.position - transform.position).magnitude > shootingRange)
-            {
-                agent.isStopped = false;
-                agent.SetDestination(target.position);
+                target = GameController.Instance.player.transform;
             }
             else
             {
-                //wenn er im perfektem Abstand zum Spieler ist, schießt er
-                agent.isStopped = true;
+                transform.forward = (target.position - transform.position); // always look at player
+                gun.forward = ((target.position) - gun.position);
 
-                if (Time.time>= nextShootingTime)
+                //derGegner flieht immer auf 0.75% seiner shooting range und schießt, wenn der Spieler ausserhalb seiner Shooting Range ist, verfolgt er ihn
+                if ((target.position - transform.position).magnitude < 0.75 * shootingRange)
                 {
-                    
-                    Shoot();
-                    nextShootingTime = Time.time + shootingIntervall;
+                    agent.isStopped = false;
+                    Vector3 escapePoint = transform.position - (target.position - transform.position);
+                    agent.SetDestination(escapePoint);
+                }
+                else if ((target.position - transform.position).magnitude > shootingRange)
+                {
+                    agent.isStopped = false;
+                    agent.SetDestination(target.position);
+                }
+                else
+                {
+                    //wenn er im perfektem Abstand zum Spieler ist, schießt er
+                    agent.isStopped = true;
+
+                    if (Time.time >= nextShootingTime)
+                    {
+
+                        Shoot();
+                        nextShootingTime = Time.time + shootingIntervall;
+                    }
                 }
             }
-
-            
+        }
+        else
+        {
+            agent.isStopped = true;
+            gun.gameObject.SetActive(false);
         }
     }
 

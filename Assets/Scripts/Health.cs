@@ -43,6 +43,10 @@ public class Health : MonoBehaviour
         currentHealth -= damageAmount;
     }
 
+    public void DisableHealthBar()
+    {
+        healthBar.gameObject.SetActive(false);
+    }
 
     public float GetCurrentHealthRatio()
     {
