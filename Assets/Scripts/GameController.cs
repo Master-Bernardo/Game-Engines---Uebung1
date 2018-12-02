@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public State currentState = State.Ingame;
     public GameObject player;
     public Health playerHealth;
+    public WeaponSystem playerWeaponSystem;
     public PlayerHUD playerHUD;
     public SpawnManager spawnManager;
     public float wave;
@@ -34,7 +35,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = player.GetComponent<Health>();
+        //playerHealth = player.GetComponent<Health>();
+        //playerWeaponSystem = player.GetComponent<WeaponSystem>();
     }
 
     // Update is called once per frame
@@ -69,6 +71,7 @@ public class GameController : MonoBehaviour
         wave = 0;
         score = 0;
         playerHealth.ResetHealth();
+        playerWeaponSystem.Reset();
         playerHUD.ShowHUD();
         spawnManager.Activate(); 
         currentState = State.Ingame;

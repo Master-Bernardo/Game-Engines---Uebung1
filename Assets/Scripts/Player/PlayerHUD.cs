@@ -8,7 +8,9 @@ public class PlayerHUD : MonoBehaviour
     public HealthBar playerHealthBar;
     public Text waveCounter;
     public Text scoreCounter;
+    public Text ammoText;
     public Text gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class PlayerHUD : MonoBehaviour
         playerHealthBar.gameObject.SetActive(false);
         waveCounter.gameObject.SetActive(false);
         scoreCounter.gameObject.SetActive(false);
+        ammoText.gameObject.SetActive(false);
     }
 
     public void ShowHUD()
@@ -37,5 +40,6 @@ public class PlayerHUD : MonoBehaviour
         playerHealthBar.gameObject.SetActive(true);
         waveCounter.gameObject.SetActive(true);
         scoreCounter.gameObject.SetActive(true);
+        ammoText.gameObject.SetActive(true);
     }
 }

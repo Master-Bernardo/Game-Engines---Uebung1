@@ -553,8 +553,35 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1214246007}
+    - target: {fileID: 7390641972865791405, guid: 921d7b69724825a489d7bb31eacfa5ae,
+        type: 3}
+      propertyPath: totalAmmo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390641974561424104, guid: 921d7b69724825a489d7bb31eacfa5ae,
+        type: 3}
+      propertyPath: ammoDisplay
+      value: 
+      objectReference: {fileID: 368928510}
+    - target: {fileID: 7390641972865791405, guid: 921d7b69724825a489d7bb31eacfa5ae,
+        type: 3}
+      propertyPath: startAmmo
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 921d7b69724825a489d7bb31eacfa5ae, type: 3}
+--- !u!114 &368928510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3842480345396002320, guid: ca39b629c5e55384a85c365e554a7ef1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5491876694727268479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &380968565 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7390641973302924932, guid: 921d7b69724825a489d7bb31eacfa5ae,
@@ -2277,6 +2304,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 261896999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1681630527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7390641974561424104, guid: 921d7b69724825a489d7bb31eacfa5ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 261896999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681630526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee4b6b97cf79884b9f87384fa4ef1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1681630530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1301992026288330425, guid: 921d7b69724825a489d7bb31eacfa5ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 261896999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681630526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde48d4887a95ce4f9a318667a0a5bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1712155383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +3041,16 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3742464212777161895, guid: 764f874325bf3d54da7a00a1b409fb5d,
+        type: 3}
+      propertyPath: playerWeaponSystem
+      value: 
+      objectReference: {fileID: 1681630527}
+    - target: {fileID: 3742464212777161895, guid: 764f874325bf3d54da7a00a1b409fb5d,
+        type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1681630530}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 764f874325bf3d54da7a00a1b409fb5d, type: 3}
 --- !u!1001 &5491876694727268479
@@ -3136,6 +3197,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5491876695361673481, guid: ca39b629c5e55384a85c365e554a7ef1,
+        type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 368928510}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca39b629c5e55384a85c365e554a7ef1, type: 3}
 --- !u!114 &7112915245983532092 stripped

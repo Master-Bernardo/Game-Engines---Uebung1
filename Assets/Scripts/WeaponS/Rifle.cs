@@ -10,12 +10,14 @@ public class Rifle : Weapon
     Transform shootPoint; //point from which the projectiles are being shot
 
     public float reloadTime;
-    public float magazineSize;
-    private float currentMagazineAmmo;
+    public int magazineSize;
+    private int currentMagazineAmmo;
+    public int startAmmo;
+    private int totalAmmo;
 
     private void Start()
     {
-        currentMagazineAmmo = magazineSize;
+        Reset();
     }
 
 
@@ -30,6 +32,32 @@ public class Rifle : Weapon
 
     public void Reload()
     {
+        if(totalAmmo > magazineSize)
+        {
+            currentMagazineAmmo = magazineSize;
+            totalAmmo -= magazineSize;
+        }
+        else
+        {
+            currentMagazineAmmo = totalAmmo;
+            totalAmmo = 0;
+        }
+            
+    }
+
+    public int GetCurrentMagazineAmmo()
+    {
+        return currentMagazineAmmo;
+    }
+
+    public int GetTotalAmmo()
+    {
+        return totalAmmo;
+    }
+
+    public void Reset()
+    {
+        totalAmmo = startAmmo;
         currentMagazineAmmo = magazineSize;
     }
 }

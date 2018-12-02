@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSystem : MonoBehaviour
 {
     [SerializeField]
     Weapon[] inventory; //will be set up in inspector
     Weapon currentSelectedWeapon;
+    public Text ammoDisplay;
+
 
     //for animation
     public Animator animator;
@@ -42,6 +45,12 @@ public class WeaponSystem : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.R)) StartReload();
+
+        if (currentSelectedWeapon is Rifle)
+        {
+            Rifle selectedRifle = currentSelectedWeapon as Rifle;
+            ammoDisplay.text = selectedRifle.GetCurrentMagazineAmmo() + "/" + selectedRifle.GetTotalAmmo();
+         }
 
     }
 
@@ -106,6 +115,7 @@ public class WeaponSystem : MonoBehaviour
     {
         if (currentSelectedWeapon is Rifle)
         {
+            if((currentSelectedWeapon as Rifle).GetTotalAmmo()>0)
             animator.SetBool("reloading", true);
             StartCoroutine("ReloadingCoroutine");
         }
@@ -120,5 +130,14 @@ public class WeaponSystem : MonoBehaviour
             (currentSelectedWeapon as Rifle).Reload();
         }
         animator.SetBool("reloading", false);
+    }
+
+    //called after gameOver to reset ammo
+    public void Reset()
+    {
+        foreach(Weapon weapon in inventory)
+        {
+            if (weapon is Rifle) (weapon as Rifle).Reset();
+        }
     }
 }
