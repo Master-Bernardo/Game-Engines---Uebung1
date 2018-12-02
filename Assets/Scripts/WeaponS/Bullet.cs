@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     Rigidbody rb;
     public float startSpeed;
     public float damage = 5;
+    public GameObject bulletSpark;
 
     void Start()
     {
@@ -19,6 +20,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.GetComponent<Health>() != null)
         {
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
