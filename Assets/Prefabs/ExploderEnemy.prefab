@@ -6,6 +6,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8606874554660211116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &808885648793993320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015556, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8606874554660211116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c1bc518cc69e247abb174defcc65ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &808885647862492734
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,6 +32,7 @@ GameObject:
   - component: {fileID: 808885647862492731}
   - component: {fileID: 808885647862492732}
   - component: {fileID: 808885647862492733}
+  - component: {fileID: 808546777012876040}
   - component: {fileID: 808885647862492711}
   m_Layer: 0
   m_Name: ExploderEnemy
@@ -113,7 +126,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -129,14 +142,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ed68c260cbf564ca6a62673dd5c526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
   scoreValue: 50
+  health: {fileID: 808546777012876040}
   target: {fileID: 0}
-  attackDamage: 1
+  attackDamage: 10
   explosionRadius: 3
   explosionForce: 5
   explosionParticle: {fileID: 4177462936758304018, guid: b2401ab400b896c49bc05c97342cf5e1,
     type: 3}
+--- !u!114 &808546777012876040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808885647862492734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde48d4887a95ce4f9a318667a0a5bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  healthBar: {fileID: 808885648793993320}
 --- !u!195 &808885647862492711
 NavMeshAgent:
   m_ObjectHideFlags: 0

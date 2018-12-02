@@ -91,6 +91,7 @@ public class WeaponSystem : MonoBehaviour
         else if(currentSelectedWeapon is Sword)
         {
             animator.SetTrigger("swordAttack");
+            (currentSelectedWeapon as Sword).StartCutting();
         }
 
 

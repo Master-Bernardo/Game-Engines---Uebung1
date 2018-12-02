@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
     public State currentState = State.Ingame;
     public GameObject player;
-    public PlayerBehavior playerScript;
+    public Health playerHealth;
     public PlayerHUD playerHUD;
     public SpawnManager spawnManager;
     public float wave;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = player.GetComponent<PlayerBehavior>();
+        playerHealth = player.GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         switch(currentState)
         {
             case State.Ingame:
-                if(playerScript.currentHealth <= 0)
+                if(playerHealth.GetCurrentHealth() <= 0)
                 {
                     GameOver();
                 }
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
     {
         wave = 0;
         score = 0;
-        playerScript.ResetHealth();
+        playerHealth.ResetHealth();
         playerHUD.ShowHUD();
         spawnManager.Activate(); 
         currentState = State.Ingame;

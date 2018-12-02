@@ -52,7 +52,7 @@ public class ExploderEnemy : SeekerEnemy
 
             if(hit.collider.tag == "Player")
             {
-                hit.collider.GetComponent<PlayerBehavior>().TakeDamage(attackDamage);
+                hit.collider.GetComponent<Health>().TakeDamage(attackDamage);
             }
         }
 

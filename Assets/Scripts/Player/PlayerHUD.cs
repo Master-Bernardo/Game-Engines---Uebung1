@@ -18,7 +18,7 @@ public class PlayerHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHealthBar.SetCurrentHealthRatio(GameController.Instance.playerScript.GetCurrentHealthRatio());
+        playerHealthBar.SetCurrentHealthRatio(GameController.Instance.playerHealth.GetCurrentHealthRatio());
         waveCounter.text = "Wave " + GameController.Instance.wave;
         scoreCounter.text = GameController.Instance.score.ToString();
     }

@@ -30,6 +30,7 @@ public class HealthBar : MonoBehaviour
             {
                 canvas.enabled = false;
             }
+            rect.sizeDelta = new Vector2(initGaugeWidth * currentHealthRatio, rect.sizeDelta.y);
         }
         else
         {
