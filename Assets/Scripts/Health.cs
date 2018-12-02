@@ -33,6 +33,11 @@ public class Health : MonoBehaviour
         healthBar.SetCurrentHealthRatio(GetCurrentHealthRatio());
     }
 
+    public void RestoreHealth(float healthAmount)
+    {
+        currentHealth += healthAmount;
+    }
+
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;

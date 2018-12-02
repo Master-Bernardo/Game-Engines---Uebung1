@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WeaponSystem : MonoBehaviour
 {
     [SerializeField]
-    Weapon[] inventory; //will be set up in inspector
+    public Weapon[] inventory; //will be set up in inspector
     Weapon currentSelectedWeapon;
     public Text ammoDisplay;
 

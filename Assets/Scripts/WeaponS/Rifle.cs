@@ -32,17 +32,22 @@ public class Rifle : Weapon
 
     public void Reload()
     {
-        if(totalAmmo > magazineSize)
+        int ammoDelta = magazineSize - currentMagazineAmmo;
+        if (totalAmmo > 0 && totalAmmo >= ammoDelta)
         {
-            currentMagazineAmmo = magazineSize;
-            totalAmmo -= magazineSize;
+            totalAmmo -= ammoDelta;
+            currentMagazineAmmo += ammoDelta;
         }
-        else
+        else if (totalAmmo < ammoDelta)
         {
-            currentMagazineAmmo = totalAmmo;
-            totalAmmo = 0;
+            currentMagazineAmmo += totalAmmo;
+            totalAmmo = 0;  
         }
-            
+    }
+
+    public void IncreaseAmmo(int ammoAmount)
+    {
+        totalAmmo += ammoAmount;
     }
 
     public int GetCurrentMagazineAmmo()

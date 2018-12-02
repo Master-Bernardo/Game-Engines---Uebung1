@@ -144,6 +144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 50
   health: {fileID: 808546777012876040}
+  itemDropChance: 0.5
+  droppableItems:
+  - {fileID: 6935472094960417459, guid: 55fb737cf9906284a99aa3b92c345818, type: 3}
+  - {fileID: 8454482627840249432, guid: 5f527bf624d1b0b41aa9acbb0150f03c, type: 3}
   target: {fileID: 0}
   attackDamage: 10
   explosionRadius: 3
