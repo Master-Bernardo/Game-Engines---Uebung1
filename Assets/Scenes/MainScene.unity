@@ -568,6 +568,16 @@ PrefabInstance:
       propertyPath: startAmmo
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7390641972713253243, guid: 921d7b69724825a489d7bb31eacfa5ae,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390641973262471346, guid: 921d7b69724825a489d7bb31eacfa5ae,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 921d7b69724825a489d7bb31eacfa5ae, type: 3}
 --- !u!114 &368928510 stripped

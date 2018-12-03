@@ -8,7 +8,6 @@ public class EscapeShooterEnemy : Enemy
     [Header("KeepingDistance")]
     public Transform target;
     protected NavMeshAgent agent;
-    private Rigidbody rb;
 
     [Header("Shooting")]
     public float attackDamage;
@@ -24,7 +23,6 @@ public class EscapeShooterEnemy : Enemy
     public override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         nextShootingTime = Time.time + shootingIntervall;
@@ -50,6 +48,12 @@ public class EscapeShooterEnemy : Enemy
                     agent.isStopped = false;
                     Vector3 escapePoint = transform.position - (target.position - transform.position);
                     agent.SetDestination(escapePoint);
+                    if (Time.time >= nextShootingTime)
+                    {
+
+                        Shoot();
+                        nextShootingTime = Time.time + shootingIntervall;
+                    }
                 }
                 else if ((target.position - transform.position).magnitude > shootingRange)
                 {
@@ -81,6 +85,7 @@ public class EscapeShooterEnemy : Enemy
     void Shoot()
     {
         Bullet projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation).GetComponent<Bullet>();
+        projectile.enemyBullet = true;
         projectile.damage = attackDamage;
         projectile.startSpeed = 40;
     }

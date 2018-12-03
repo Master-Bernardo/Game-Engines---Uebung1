@@ -25,7 +25,8 @@ public class Rifle : Weapon
     {
         if (currentMagazineAmmo > 0)
         {
-            Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+            Bullet bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation).GetComponent<Bullet>();
+            bullet.enemyBullet = false;
             currentMagazineAmmo -= 1;
         }
     }

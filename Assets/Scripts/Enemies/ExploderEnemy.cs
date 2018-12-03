@@ -57,7 +57,7 @@ public class ExploderEnemy : SeekerEnemy
                 hit.collider.GetComponent<Rigidbody>().AddForce(direction * explosionForce, ForceMode.Impulse);
             }
 
-            if(hit.collider.tag == "Player")
+            if(hit.collider.GetComponent<Health>()!= null)
             {
                 hit.collider.GetComponent<Health>().TakeDamage(attackDamage);
             }

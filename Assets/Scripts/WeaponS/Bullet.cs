@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public float damage = 5;
     public GameObject bulletSpark;
 
+    public bool enemyBullet; //if this is true this is the bullet of the enemy
+
     void Start()
     {
         rb.velocity = transform.forward * startSpeed;
@@ -19,9 +21,25 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Health>() != null)
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
-            Destroy(gameObject);
+            if(enemyBullet) //falls die Kugel von einem Gegner kommt
+            {
+                if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Friendly")
+                {
+                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                if (collision.gameObject.tag == "Enemy")
+                {
+                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
+                    Destroy(gameObject);
+                }
+            }
+            
         }
     }
 }

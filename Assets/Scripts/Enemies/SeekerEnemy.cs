@@ -7,12 +7,10 @@ public class SeekerEnemy : Enemy
 {
     public Transform target;
     private NavMeshAgent agent;
-    private Rigidbody rb;
 
     public override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
     }
 
