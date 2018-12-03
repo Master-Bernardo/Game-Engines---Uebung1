@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
         }
    
         DontDestroyOnLoad(gameObject);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Start is called before the first frame update
