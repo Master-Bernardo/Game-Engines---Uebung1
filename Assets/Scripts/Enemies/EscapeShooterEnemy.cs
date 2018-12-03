@@ -76,7 +76,6 @@ public class EscapeShooterEnemy : Enemy
         }
         else
         {
-            agent.isStopped = true;
             gun.gameObject.SetActive(false);
         }
     }

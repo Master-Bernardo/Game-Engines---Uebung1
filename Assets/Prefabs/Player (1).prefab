@@ -196,6 +196,7 @@ MonoBehaviour:
   shootPoint: {fileID: 7390641972858911605}
   reloadTime: 0
   magazineSize: 0
+  startAmmo: 0
 --- !u!1 &7390641972962150138
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,9 +611,9 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7390641973262471346}
   m_Enabled: 1
---- !u!1 &7390641973293573418 stripped
+--- !u!1 &7390641973293573416 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100046, guid: aa7cf9ab718cebd42b4b18a516c2c991,
+  m_CorrespondingSourceObject: {fileID: 100044, guid: aa7cf9ab718cebd42b4b18a516c2c991,
     type: 3}
   m_PrefabInstance: {fileID: 7390641973293540324}
   m_PrefabAsset: {fileID: 0}
@@ -1630,7 +1631,7 @@ MonoBehaviour:
   camera3rdPerson: {fileID: 7390641972713253243}
   camera1stPerson: {fileID: 7390641973262471346}
   boneToMove: {fileID: 7390641973293573440}
-  boneToMove2: {fileID: 7390641973293573418}
+  boneToMove2: {fileID: 7390641973293573416}
   boneToMove3: {fileID: 7390641973293573444}
   cameraRotationLimit: 85
 --- !u!136 &7390641974561424118
@@ -1663,6 +1664,7 @@ MonoBehaviour:
   - {fileID: 7390641972865791405}
   - {fileID: 7390641974030615947}
   - {fileID: 0}
+  ammoDisplay: {fileID: 0}
   animator: {fileID: 7390641973302924932}
 --- !u!1001 &7390641973293540324
 PrefabInstance:

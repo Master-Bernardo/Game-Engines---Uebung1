@@ -354,8 +354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 5491876695878301139}
   waveCounter: {fileID: 5491876693954256382}
-  scoreCounter: {fileID: 0}
-  gameOverText: {fileID: 0}
+  scoreCounter: {fileID: 5491876695983769758}
+  ammoText: {fileID: 3842480345396002320}
+  gameOverText: {fileID: 7112915245983532092}
 --- !u!1 &5491876695392479146
 GameObject:
   m_ObjectHideFlags: 0

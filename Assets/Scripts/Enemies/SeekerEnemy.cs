@@ -18,7 +18,7 @@ public class SeekerEnemy : Enemy
     {
         base.Update();
 
-        if(target)
+        if(target && alive)
         {
             agent.SetDestination(target.position);
         }
