@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Health health;
     public float itemDropChance;
     public GameObject[] droppableItems;
+    public GameObject deathParticle;
     public bool alive = true;
     private Renderer rend;
     private Rigidbody rb;
@@ -93,6 +94,10 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        if (deathParticle)
+        {
+            Instantiate(deathParticle, transform.position, transform.rotation);
+        }
         if (!friendly)GameController.Instance.AddScore(scoreValue);
         GameController.Instance.RemoveFighter(this);
         SpawnRandomItem();       
