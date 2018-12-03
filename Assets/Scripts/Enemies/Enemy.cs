@@ -106,8 +106,8 @@ public class Enemy : MonoBehaviour
         if (Random.value < itemDropChance)
         {
             Rigidbody newItemRB = Instantiate(droppableItems[Random.Range(0, droppableItems.Length)], transform.position, transform.rotation).GetComponent<Rigidbody>();
-            newItemRB.AddForce(new Vector3(0, 100, 0));
-            newItemRB.AddTorque(new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)));
+            newItemRB.AddForce(new Vector3(0, 27500, 0));
+            newItemRB.AddTorque(new Vector3(Random.Range(0, 10000), Random.Range(0, 10000), Random.Range(0, 10000)));
         }
     }
 

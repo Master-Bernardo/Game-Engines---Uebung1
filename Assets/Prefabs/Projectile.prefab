@@ -122,7 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3260424625136450061}
+  lifeTime: 5
   startSpeed: 30
   damage: 5
   bulletSpark: {fileID: 7239948058151575478, guid: ff2464f9c80bc094c81f91d3e9385a7a,
     type: 3}
+  enemyBullet: 0

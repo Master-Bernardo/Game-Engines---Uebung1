@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     Rigidbody rb;
+    public float lifeTime;
     public float startSpeed;
     public float damage = 5;
     public GameObject bulletSpark;
@@ -15,6 +16,15 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.forward * startSpeed;
+    }
+
+    private void Update()
+    {
+        lifeTime -= Time.deltaTime;
+        if (lifeTime < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
