@@ -6,13 +6,12 @@ using UnityEngine.AI;
 public class EscapeShooterEnemy : Enemy
 {
     [Header("KeepingDistance")]
-    public Transform target;
-    protected NavMeshAgent agent;
 
     [Header("Shooting")]
     public float attackDamage;
     public float shootingRange; //max distance which we flee from player
-    public float accuracy;
+    [Tooltip("how accurate is this bastard? - the smaller the better")]
+    public float accuracy; // 
     public float shootingIntervall;
     float nextShootingTime;
     public GameObject projectilePrefab;
@@ -25,6 +24,7 @@ public class EscapeShooterEnemy : Enemy
         base.Start();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
+
         nextShootingTime = Time.time + shootingIntervall;
     }
 
@@ -33,12 +33,8 @@ public class EscapeShooterEnemy : Enemy
         base.Update();
         if (alive)
         {
-            if (target == null)
-            {
-                target = GameController.Instance.player.transform;
-            }
-            else
-            {
+            if(target)
+            { 
                 transform.forward = (target.position - transform.position); // always look at player
                 gun.forward = ((target.position) - gun.position);
 
@@ -83,8 +79,9 @@ public class EscapeShooterEnemy : Enemy
     //Shoots aprojectile at player
     void Shoot()
     {
-        Bullet projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation).GetComponent<Bullet>();
-        projectile.enemyBullet = true;
+        Bullet projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(Random.Range(0, accuracy), Random.Range(0, accuracy), Random.Range(0, accuracy))).GetComponent<Bullet>();
+        if (!friendly) projectile.enemyBullet = true;
+        else projectile.enemyBullet = false;
         projectile.damage = attackDamage;
         projectile.startSpeed = 40;
     }

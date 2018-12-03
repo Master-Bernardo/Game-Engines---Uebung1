@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExploderEnemy : SeekerEnemy
+public class ExploderEnemy : Enemy
 {
     public float attackDamage;
     public float explosionRadius;
     public float explosionForce;
 
     public GameObject explosionParticle;
-
-    // Start is called before the first frame update
-    public override void Start()
-    {
-        base.Start();
-    }
 
     // Update is called once per frame
     public override void Update()
@@ -29,19 +23,16 @@ public class ExploderEnemy : SeekerEnemy
                     Explode();
                 }
             }
-            else
-            {
-                if (GameController.Instance.player)
-                {
-                    target = GameController.Instance.player.transform;
-                }
-            }
         }
-        else
+    }
+
+    protected override void FightingUpdate()
+    {
+        base.FightingUpdate();
+        if (target)
         {
-
+            agent.SetDestination(target.position);
         }
-
     }
 
     public void Explode()

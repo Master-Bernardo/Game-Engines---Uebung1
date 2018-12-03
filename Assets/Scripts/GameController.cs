@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     public float wave;
     public float score;
 
+    private HashSet<Enemy> fighters; //this hashSet saves all fighters currently inGame
+
     void Awake()
     {
         if (Instance == null)
@@ -32,16 +34,11 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        fighters = new HashSet<Enemy>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //playerHealth = player.GetComponent<Health>();
-        //playerWeaponSystem = player.GetComponent<WeaponSystem>();
-    }
 
-    // Update is called once per frame
     void Update()
     {
         switch(currentState)
@@ -87,5 +84,20 @@ public class GameController : MonoBehaviour
     public void IncrementWave()
     {
         wave++;
+    }
+
+    public HashSet<Enemy> GetAllFighters()
+    {
+        return fighters;
+    }
+
+    public void AddFighter(Enemy fighter)
+    {
+        fighters.Add(fighter);
+    }
+
+    public void RemoveFighter(Enemy fighter)
+    {
+        fighters.Remove(fighter);
     }
 }

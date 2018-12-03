@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public bool friendly = false;
     public float scoreValue;
     public Health health;
     public float itemDropChance;
@@ -12,12 +13,23 @@ public class Enemy : MonoBehaviour
     public bool alive = true;
     private Renderer rend;
     private Rigidbody rb;
+    protected Transform target;
+    protected NavMeshAgent agent;
+
+    public float enemyDetectingRadius = 15f;
+
+    //for optimisation
+    public float fightingUpdateIntervall = 0.5f;
+    float nextFightingUpdateTime;
    
     public virtual void Start()
     {
+        GameController.Instance.AddFighter(this);
         rend = transform.GetComponentInChildren<Renderer>();
         alive = true;
         rb = GetComponent<Rigidbody>();
+        agent = GetComponent<NavMeshAgent>();
+        nextFightingUpdateTime = Time.time + fightingUpdateIntervall;
     }
 
     // Update is called once per frame
@@ -28,6 +40,11 @@ public class Enemy : MonoBehaviour
             if (health.GetCurrentHealth() <= 0)
             {
                 Die();
+            }
+            else if(Time.time> nextFightingUpdateTime)
+            {
+                nextFightingUpdateTime = Time.time + fightingUpdateIntervall;
+                FightingUpdate();
             }
         }
         else
@@ -42,9 +59,42 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //checks for enemies in area and sets navmesh targets
+    protected virtual void FightingUpdate()
+    {
+        //set target
+        bool searchForNewTarget = false;
+        if (!target)
+        {
+            searchForNewTarget = true;
+        }
+        else if (target.GetComponent<Enemy>() != null)
+        {
+            if (target.GetComponent<Enemy>().alive == false) searchForNewTarget = true;
+        }
+
+        if (searchForNewTarget)
+        {
+            Enemy nearestEnemy = GetNearestEnemy();
+            //if there are no enemies beside me, go for the player 
+            if (nearestEnemy == null && !friendly)
+            {
+                if (GameController.Instance.player)
+                {
+                    target = GameController.Instance.player.transform;
+                }
+            }
+            else if(nearestEnemy != null)
+            {
+                target = nearestEnemy.transform;
+            }
+        }
+    }
+
     public void Die()
     {
-        GameController.Instance.AddScore(scoreValue);
+        if (!friendly)GameController.Instance.AddScore(scoreValue);
+        GameController.Instance.RemoveFighter(this);
         SpawnRandomItem();       
         StartFloating();
         health.DisableHealthBar();
@@ -68,6 +118,55 @@ public class Enemy : MonoBehaviour
         rb.isKinematic = false;
         //rb.mass = 0;
         rb.AddForce(new Vector3(0, 100, 0));
+    }
+
+    Enemy GetNearestEnemy()
+    {
+        HashSet<Enemy> enemies = GameController.Instance.GetAllFighters();
+
+        Enemy nearestEnemy = null;
+        float nearestDistance = float.PositiveInfinity;
+
+        if(friendly)
+        {
+            foreach(Enemy enemy in enemies)
+            {
+                if(!enemy.friendly)
+                {
+                    float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
+                    if (currentDistance < nearestDistance)
+                    {
+                        nearestDistance = currentDistance;
+                        nearestEnemy = enemy;
+                    }  
+                }
+            }
+        }else if(!friendly)
+        {
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy.friendly)
+                {
+                    float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
+                    if (currentDistance < nearestDistance)
+                    {
+                        nearestDistance = currentDistance;
+                        nearestEnemy = enemy;
+                    }
+                }
+            }
+            if (GameController.Instance.player)
+            {
+                float currentDistance = Vector3.Distance(GameController.Instance.player.transform.position, transform.position);
+                if (currentDistance < nearestDistance)
+                {
+                    nearestDistance = currentDistance;
+                    nearestEnemy = null; //fall der Player am nähesten ist, setzten wir den nearst Enemy auf null
+                }
+            }
+        }
+
+        return nearestEnemy;
     }
 
 }
