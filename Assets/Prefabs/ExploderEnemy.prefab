@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!224 &808885648793993321 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8606874554660211116}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &808885648793993320 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8955548562836015556, guid: 852efd77327a92a418b516876869b8e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8606874554660211116}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c1bc518cc69e247abb174defcc65ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &808885647862492734
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,10 +130,11 @@ MonoBehaviour:
   droppableItems:
   - {fileID: 6935472094960417459, guid: 55fb737cf9906284a99aa3b92c345818, type: 3}
   - {fileID: 8454482627840249432, guid: 5f527bf624d1b0b41aa9acbb0150f03c, type: 3}
+  alive: 1
   target: {fileID: 0}
   attackDamage: 10
   explosionRadius: 3
-  explosionForce: 5
+  explosionForce: 300
   explosionParticle: {fileID: 4177462936758304018, guid: b2401ab400b896c49bc05c97342cf5e1,
     type: 3}
 --- !u!114 &808546777012876040
@@ -190,6 +173,24 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!224 &808885648793993321 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8606874554660211116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &808885648793993320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015556, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8606874554660211116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c1bc518cc69e247abb174defcc65ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8606874554660211116
 PrefabInstance:
   m_ObjectHideFlags: 0
