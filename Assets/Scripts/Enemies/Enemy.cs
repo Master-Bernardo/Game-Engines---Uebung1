@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Health health;
     public float itemDropChance;
     public GameObject[] droppableItems;
+    public GameObject deathParticle;
     public bool alive = true;
     private Renderer rend;
     private Rigidbody rb;
@@ -87,6 +88,10 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        if (deathParticle)
+        {
+            Instantiate(deathParticle, transform.position, transform.rotation);
+        }
         if (!friendly)GameController.Instance.AddScore(scoreValue);
         GameController.Instance.RemoveFighter(this);
         SpawnRandomItem();       
@@ -100,8 +105,8 @@ public class Enemy : MonoBehaviour
         if (Random.value < itemDropChance)
         {
             Rigidbody newItemRB = Instantiate(droppableItems[Random.Range(0, droppableItems.Length)], transform.position, transform.rotation).GetComponent<Rigidbody>();
-            newItemRB.AddForce(new Vector3(0, 100, 0));
-            newItemRB.AddTorque(new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)));
+            newItemRB.AddForce(new Vector3(0, 27500, 0));
+            newItemRB.AddTorque(new Vector3(Random.Range(0, 10000), Random.Range(0, 10000), Random.Range(0, 10000)));
         }
     }
 
