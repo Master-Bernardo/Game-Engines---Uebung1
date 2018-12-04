@@ -10,14 +10,23 @@ public class PlayerController : MonoBehaviour {
     private PlayerMover mover;
     public Animator animator;
 
+    public float interactableScannIntervall; //how often do we check for interactables
+    float nextInteractableScannTime;
+    public float interactableScanDistance; // how distant can an interactable be to activate it
+    Interactable currentInteractableInReach;
+
 
     void Start()
     {
         mover = GetComponent<PlayerMover>();
+        nextInteractableScannTime = Time.time + interactableScannIntervall;
     }
 
     private void Update()
     {
+        CheckForInteractables();
+
+
         //calculate movement velocity as a 3d Vector
         float _xMov = Input.GetAxis("Horizontal"); //the Raw is used when we want some smoothing, when we want full control
         float _zMov = Input.GetAxis("Vertical");  //both will go from -1 to 1
@@ -91,6 +100,32 @@ public class PlayerController : MonoBehaviour {
             mover.ChangeCamera();
         }
 
+        //use an interactible if aviable
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (currentInteractableInReach != null) currentInteractableInReach.Interact();
+        }
+
+
+    }
+
+    void CheckForInteractables()
+    {
+        if(Time.time > nextInteractableScannTime)
+        {
+            nextInteractableScannTime = Time.time + interactableScannIntervall;
+
+            if (currentInteractableInReach != null) currentInteractableInReach.HideUI();
+            currentInteractableInReach = null;
+            foreach (Interactable interactable in GameController.Instance.GetAllInteractables())
+            {
+                if (Vector3.Distance(interactable.gameObject.transform.position, transform.position) < interactableScanDistance)
+                {
+                    currentInteractableInReach = interactable;
+                }
+            }
+            if(currentInteractableInReach!=null) currentInteractableInReach.ShowUI();
+        }
         
     }
  

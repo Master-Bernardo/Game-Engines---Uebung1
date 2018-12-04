@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public float score;
 
     private HashSet<Enemy> fighters; //this hashSet saves all fighters currently inGame
+    private HashSet<Interactable> interactables; //interactables inGame
 
     void Awake()
     {
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
         Cursor.visible = false;
 
         fighters = new HashSet<Enemy>();
+        interactables = new HashSet<Interactable> ();
     }
 
 
@@ -99,5 +101,20 @@ public class GameController : MonoBehaviour
     public void RemoveFighter(Enemy fighter)
     {
         fighters.Remove(fighter);
+    }
+
+    public HashSet<Interactable> GetAllInteractables()
+    {
+        return interactables;
+    }
+
+    public void AddInteractable(Interactable interactable)
+    {
+        interactables.Add(interactable);
+    }
+
+    public void RemoveInteractable(Interactable interactable)
+    {
+        interactables.Remove(interactable);
     }
 }

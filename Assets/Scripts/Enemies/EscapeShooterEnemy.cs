@@ -34,7 +34,8 @@ public class EscapeShooterEnemy : Enemy
         if (alive)
         {
             if(target)
-            { 
+            {
+                agent.updateRotation = false;
                 transform.forward = (target.position - transform.position); // always look at player
                 gun.forward = ((target.position) - gun.position);
 

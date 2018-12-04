@@ -62,32 +62,26 @@ public class Enemy : MonoBehaviour
     //checks for enemies in area and sets navmesh targets
     protected virtual void FightingUpdate()
     {
-        //set target
-        bool searchForNewTarget = false;
-        if (!target)
+        Enemy nearestEnemy = GetNearestEnemy();
+        //if there are no enemies beside me, go for the player 
+        if (nearestEnemy == null)
         {
-            searchForNewTarget = true;
-        }
-        else if (target.GetComponent<Enemy>() != null)
-        {
-            if (target.GetComponent<Enemy>().alive == false) searchForNewTarget = true;
-        }
-
-        if (searchForNewTarget)
-        {
-            Enemy nearestEnemy = GetNearestEnemy();
-            //if there are no enemies beside me, go for the player 
-            if (nearestEnemy == null && !friendly)
+            if (!friendly)
             {
                 if (GameController.Instance.player)
                 {
                     target = GameController.Instance.player.transform;
                 }
             }
-            else if(nearestEnemy != null)
+            else
             {
-                target = nearestEnemy.transform;
+                target = null;
             }
+            
+        }
+        else if(nearestEnemy != null)
+        {
+            target = nearestEnemy.transform;
         }
     }
 
@@ -120,7 +114,7 @@ public class Enemy : MonoBehaviour
         rb.AddForce(new Vector3(0, 100, 0));
     }
 
-    Enemy GetNearestEnemy()
+    protected Enemy GetNearestEnemy()
     {
         HashSet<Enemy> enemies = GameController.Instance.GetAllFighters();
 
@@ -133,12 +127,15 @@ public class Enemy : MonoBehaviour
             {
                 if(!enemy.friendly)
                 {
-                    float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
-                    if (currentDistance < nearestDistance)
+                    if(enemy.alive == true)
                     {
-                        nearestDistance = currentDistance;
-                        nearestEnemy = enemy;
-                    }  
+                        float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
+                        if (currentDistance < nearestDistance && currentDistance < enemyDetectingRadius)
+                        {
+                            nearestDistance = currentDistance;
+                            nearestEnemy = enemy;
+                        }
+                    }
                 }
             }
         }else if(!friendly)
@@ -147,11 +144,14 @@ public class Enemy : MonoBehaviour
             {
                 if (enemy.friendly)
                 {
-                    float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
-                    if (currentDistance < nearestDistance)
+                    if (enemy.alive == true)
                     {
-                        nearestDistance = currentDistance;
-                        nearestEnemy = enemy;
+                        float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
+                        if (currentDistance < nearestDistance)
+                        {
+                            nearestDistance = currentDistance;
+                            nearestEnemy = enemy;
+                        }
                     }
                 }
             }
