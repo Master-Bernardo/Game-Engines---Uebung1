@@ -125,7 +125,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!1 &5620948810106678217
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +340,7 @@ MonoBehaviour:
   health: {fileID: 5620948810106678075}
   itemDropChance: 0
   droppableItems: []
+  deathParticle: {fileID: 0}
   alive: 1
   enemyDetectingRadius: 15
   fightingUpdateIntervall: 0.5

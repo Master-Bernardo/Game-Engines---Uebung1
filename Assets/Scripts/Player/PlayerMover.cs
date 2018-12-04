@@ -131,7 +131,7 @@ public class PlayerMover : MonoBehaviour
                 }
                 else
                 {
-                    if (rb.velocity.magnitude < maxSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
+                    if (new Vector3(rb.velocity.x,0f,rb.velocity.z).magnitude < maxSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
                 }
             }
             if (jump)
