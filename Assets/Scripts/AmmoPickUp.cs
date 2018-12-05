@@ -25,9 +25,9 @@ public class AmmoPickUp : MonoBehaviour
         {
             foreach(Weapon weapon in collider.GetComponent<WeaponSystem>().inventory)
             {
-                if (weapon is Rifle)
+                if (weapon is MissileWeapon)
                 {
-                    ((Rifle)weapon).IncreaseAmmo(ammoAmount);
+                    ((MissileWeapon)weapon).IncreaseAmmo(ammoAmount);
                 }
             }
                 
