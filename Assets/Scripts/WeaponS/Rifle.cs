@@ -13,7 +13,7 @@ public class Rifle : MissileWeapon
         {
             Bullet bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation).GetComponent<Bullet>();
             bullet.damage = damage;
-            bullet.enemyBullet = false;
+            bullet.team = Team.Friendly;
             currentMagazineAmmo -= 1;
         }
     }

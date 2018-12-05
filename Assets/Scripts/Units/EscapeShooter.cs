@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EscapeShooterEnemy : Enemy
+public class EscapeShooter : Unit
 {
-    [Header("KeepingDistance")]
+    [Header("Escape Shooter")]
 
-    [Header("Shooting")]
     public float attackDamage;
     public float shootingRange; //max distance which we flee from player
     [Tooltip("how accurate is this bastard? - the smaller the better")]
-    public float accuracy; // 
+    public float accuracy; 
     public float shootingIntervall;
     float nextShootingTime;
     public GameObject projectilePrefab;
@@ -31,6 +30,7 @@ public class EscapeShooterEnemy : Enemy
     public override void Update()
     {
         base.Update();
+        
         if (alive)
         {
             if(target)
@@ -81,8 +81,7 @@ public class EscapeShooterEnemy : Enemy
     void Shoot()
     {
         Bullet projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(Random.Range(0, accuracy), Random.Range(0, accuracy), Random.Range(0, accuracy))).GetComponent<Bullet>();
-        if (!friendly) projectile.enemyBullet = true;
-        else projectile.enemyBullet = false;
+        projectile.team = health.team;
         projectile.damage = attackDamage;
         projectile.startSpeed = 40;
     }

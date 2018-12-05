@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   healthBar: {fileID: 3002531494416646435}
+  team: 1
 --- !u!114 &1654768958942856050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,18 +337,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38e86b69835da84dbab6b3ed04e7d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendly: 0
+  followTarget: 0
+  followPlayer: 0
+  followingTarget: {fileID: 0}
   scoreValue: 10
-  health: {fileID: 6835022439859004037}
   itemDropChance: 0.5
   droppableItems:
   - {fileID: 6935472094960417459, guid: 55fb737cf9906284a99aa3b92c345818, type: 3}
   - {fileID: 8454482627840249432, guid: 5f527bf624d1b0b41aa9acbb0150f03c, type: 3}
+  enemyDetectingRadius: 100
+  alive: 1
   deathParticle: {fileID: 1151571352188961962, guid: 13bd4852d51a0b04ba2bd195442f5761,
     type: 3}
-  alive: 1
-  enemyDetectingRadius: 15
-  fightingUpdateIntervall: 0.5
+  health: {fileID: 6835022439859004037}
+  fightingUpdateIntervall: 1
   attackDamage: 10
   shootingRange: 10
   accuracy: 5

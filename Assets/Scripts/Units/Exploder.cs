@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExploderEnemy : Enemy
+public class Exploder : Unit
 {
+    //explodes when he comes close to an enemy, gives damage to  everything in his explosion radius enemies and friendlies alike
+    [Header("Exploder")]
     public float attackDamage;
     public float explosionRadius;
     public float explosionForce;
 
     public GameObject explosionParticle;
 
-    // Update is called once per frame
     public override void Update()
     {
         base.Update();

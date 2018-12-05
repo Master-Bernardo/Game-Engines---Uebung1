@@ -35,7 +35,7 @@ GameObject:
   - component: {fileID: 808885647862492732}
   - component: {fileID: 808885647862492711}
   m_Layer: 10
-  m_Name: ExploderEnemy
+  m_Name: ExploderFriendly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   healthBar: {fileID: 808885648793993320}
-  team: 1
+  team: 0
 --- !u!114 &808885647862492733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df3f2809c69be3b4c8c3985f8bcf5ad9, type: 2}
+  - {fileID: 2100000, guid: 5e5917ac160682c488c12b0aacb5d934, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

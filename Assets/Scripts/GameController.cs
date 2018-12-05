@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public float wave;
     public float score;
 
-    private HashSet<Enemy> fighters; //this hashSet saves all fighters currently inGame
+    private HashSet<Unit> units; //this hashSet saves all fighters currently inGame
     private HashSet<Interactable> interactables; //interactables inGame
 
     void Awake()
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        fighters = new HashSet<Enemy>();
+        units = new HashSet<Unit>();
         interactables = new HashSet<Interactable> ();
     }
 
@@ -88,19 +88,19 @@ public class GameController : MonoBehaviour
         wave++;
     }
 
-    public HashSet<Enemy> GetAllFighters()
+    public HashSet<Unit> GetAllUnits()
     {
-        return fighters;
+        return units;
     }
 
-    public void AddFighter(Enemy fighter)
+    public void AddUnit(Unit fighter)
     {
-        fighters.Add(fighter);
+        units.Add(fighter);
     }
 
-    public void RemoveFighter(Enemy fighter)
+    public void RemoveUnit(Unit fighter)
     {
-        fighters.Remove(fighter);
+        units.Remove(fighter);
     }
 
     public HashSet<Interactable> GetAllInteractables()

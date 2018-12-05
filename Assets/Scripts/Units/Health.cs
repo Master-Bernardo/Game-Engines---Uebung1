@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public float maxHealth;
     private float currentHealth;
     public HealthBar healthBar;
+    public Team team; 
 
     // Start is called before the first frame update
     void Start()
