@@ -5,16 +5,40 @@ using UnityEngine.UI;
 
 public class WeaponSystem : MonoBehaviour
 {
+    [Header("Weapons")]
     [SerializeField]
     public Weapon[] inventory; //will be set up in inspector
     Weapon currentSelectedWeapon;
-    public Text ammoDisplay;
+    public Text weaponInfo; //shows weapon name and ammo
 
     public Transform weaponHolder;
 
+    [Header("Ammo")]
+    //ammo in pockets - not in magazines
 
-    //for animation
+    Dictionary<AmmoType, int> ammo; //TODO this better
+    public int startRifleAmmo;
+    public int startRocketAmmo;
+    public int startLaserAmmo;
+
+    [Header("Animation")]
     public Animator animator;
+
+    public static WeaponSystem Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        ammo = new Dictionary<AmmoType, int>();
+    }
 
     void Start()
     {
@@ -23,6 +47,10 @@ public class WeaponSystem : MonoBehaviour
             if(weapon!=null)weapon.gameObject.SetActive(false);
         }
         ChangeWeapon(0);
+
+        ammo[AmmoType.Rifle] = startRifleAmmo;
+        ammo[AmmoType.Rocket] = startRocketAmmo;
+        ammo[AmmoType.Laser] = startLaserAmmo;
     }
 
     // Update is called once per frame
@@ -50,9 +78,25 @@ public class WeaponSystem : MonoBehaviour
 
         if (currentSelectedWeapon is MissileWeapon)
         {
-            MissileWeapon selectedRifle = currentSelectedWeapon as MissileWeapon;
-            ammoDisplay.text = selectedRifle.GetCurrentMagazineAmmo() + "/" + selectedRifle.GetTotalAmmo();
-         }
+            MissileWeapon selectedMissileWeapon = currentSelectedWeapon as MissileWeapon;
+            switch (selectedMissileWeapon.ammoType)
+            {
+                case AmmoType.Rifle:
+                    weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Rifle];
+                    break;
+                case AmmoType.Rocket:
+                    weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Rocket];
+                    break;
+                case AmmoType.Laser:
+                    weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Laser];
+                    break;
+            }
+
+        }
+        else
+        {
+            weaponInfo.text = currentSelectedWeapon.weaponName;
+        }
 
     }
 
@@ -117,7 +161,7 @@ public class WeaponSystem : MonoBehaviour
     {
         if (currentSelectedWeapon is MissileWeapon)
         {
-            if((currentSelectedWeapon as MissileWeapon).GetTotalAmmo()>0)
+            //if((currentSelectedWeapon as MissileWeapon).ammoType
             animator.SetBool("reloading", true);
             StartCoroutine("ReloadingCoroutine");
         }
@@ -154,5 +198,22 @@ public class WeaponSystem : MonoBehaviour
         if (currentSelectedWeapon == currentWeapon.GetComponent<Weapon>()) currentSelectedWeapon = inventory[0];
 
         return currentWeapon;
+    }
+    
+    //gets called by the weapons
+    public int GetAmmo(AmmoType ammoType)
+    {
+        return ammo[ammoType];
+    }
+
+    //gets called by the weapons
+    public void SetAmmo(AmmoType ammoType, int value)
+    {
+        ammo[ammoType] = value;
+    }
+
+    public void AddAmmo(AmmoType ammoType, int value)
+    {
+        ammo[ammoType] += value;
     }
 }

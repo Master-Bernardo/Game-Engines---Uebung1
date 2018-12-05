@@ -11,8 +11,8 @@ public class MissileWeapon : Weapon
     public float reloadTime;
     public int magazineSize;
     protected int currentMagazineAmmo;
-    public int startAmmo;
-    protected int totalAmmo;
+
+    public AmmoType ammoType;
 
     private void Start()
     {
@@ -27,6 +27,7 @@ public class MissileWeapon : Weapon
 
     public virtual void Reload()
     {
+        int totalAmmo = WeaponSystem.Instance.GetAmmo(ammoType);
         int ammoDelta = magazineSize - currentMagazineAmmo;
         if (totalAmmo > 0 && totalAmmo >= ammoDelta)
         {
@@ -38,11 +39,7 @@ public class MissileWeapon : Weapon
             currentMagazineAmmo += totalAmmo;
             totalAmmo = 0;  
         }
-    }
-
-    public void IncreaseAmmo(int ammoAmount)
-    {
-        totalAmmo += ammoAmount;
+        WeaponSystem.Instance.SetAmmo(ammoType,totalAmmo);
     }
 
     public int GetCurrentMagazineAmmo()
@@ -50,14 +47,8 @@ public class MissileWeapon : Weapon
         return currentMagazineAmmo;
     }
 
-    public int GetTotalAmmo()
-    {
-        return totalAmmo;
-    }
-
     public void Reset()
     {
-        totalAmmo = startAmmo;
         currentMagazineAmmo = magazineSize;
     }
 }

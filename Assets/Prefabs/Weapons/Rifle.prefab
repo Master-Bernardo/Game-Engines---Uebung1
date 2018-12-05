@@ -392,11 +392,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a0fc6e189a87545b350a12f6317e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Rifle
   damage: 5
   shootPoint: {fileID: 5701584337460662568}
   reloadTime: 1
   magazineSize: 7
   startAmmo: 100
+  ammoType: 0
   projectilePrefab: {fileID: 3260424625136450102, guid: 140c308dbc534814b8fa20143de7d5b7,
     type: 3}
 --- !u!1 &5701584337835568295

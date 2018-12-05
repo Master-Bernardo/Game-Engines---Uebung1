@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde5cd81b34db734383ed9427baf5bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Sword
   damage: 10
   cuttingTime: 0.7
 --- !u!65 &3345851319252381780

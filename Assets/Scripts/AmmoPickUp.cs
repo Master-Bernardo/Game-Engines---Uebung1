@@ -5,6 +5,7 @@ using UnityEngine;
 public class AmmoPickUp : MonoBehaviour
 {
     public int ammoAmount;
+    public AmmoType ammoType;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +24,7 @@ public class AmmoPickUp : MonoBehaviour
 
         if (collider.tag == "Player")
         {
-            foreach(Weapon weapon in collider.GetComponent<WeaponSystem>().inventory)
-            {
-                if (weapon is MissileWeapon)
-                {
-                    ((MissileWeapon)weapon).IncreaseAmmo(ammoAmount);
-                }
-            }
+            WeaponSystem.Instance.AddAmmo(ammoType, ammoAmount);
                 
             Destroy(gameObject);
         }
