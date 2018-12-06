@@ -79,15 +79,16 @@ ModelImporter:
     4300000: PlayerCharacterMesh
     7400000: PlayerCharacterRig|attackTesing
     7400002: PlayerCharacterRig|AttackWithSword
-    7400004: PlayerCharacterRig|ChangeWeapon
-    7400006: PlayerCharacterRig|HoldSword
-    7400008: PlayerCharacterRig|Idle
-    7400010: PlayerCharacterRig|Jump
-    7400012: PlayerCharacterRig|HoldWeapon
-    7400014: PlayerCharacterRig|ReloadWeapon
-    7400016: PlayerCharacterRig|RunForward
-    7400018: PlayerCharacterRig|RunSidewards
-    7400020: PlayerCharacterRig|SprintForward
+    7400004: PlayerCharacterRig|AttackWithSword2
+    7400006: PlayerCharacterRig|ChangeWeapon
+    7400008: PlayerCharacterRig|HoldSword
+    7400010: PlayerCharacterRig|Idle
+    7400012: PlayerCharacterRig|Jump
+    7400014: PlayerCharacterRig|HoldWeapon
+    7400016: PlayerCharacterRig|ReloadWeapon
+    7400018: PlayerCharacterRig|RunForward
+    7400020: PlayerCharacterRig|RunSidewards
+    7400022: PlayerCharacterRig|SprintForward
     9500000: //RootNode
     13700000: PlayerCharacterMesh
   externalObjects: {}
@@ -149,6 +150,34 @@ ModelImporter:
     - serializedVersion: 16
       name: PlayerCharacterRig|AttackWithSword
       takeName: PlayerCharacterRig|AttackWithSword
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PlayerCharacterRig|AttackWithSword2
+      takeName: PlayerCharacterRig|AttackWithSword2
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0

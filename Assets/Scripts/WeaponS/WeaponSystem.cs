@@ -145,8 +145,10 @@ public class WeaponSystem : MonoBehaviour
         }
         else if(currentSelectedWeapon is Sword)
         {
-            animator.SetTrigger("swordAttack");
-            (currentSelectedWeapon as Sword).StartCutting();
+            Sword sword = (currentSelectedWeapon as Sword);
+            if(sword.rightCut) animator.SetTrigger("swordAttackRight");
+            else animator.SetTrigger("swordAttackLeft");
+            sword.StartCutting();
         }
 
 
