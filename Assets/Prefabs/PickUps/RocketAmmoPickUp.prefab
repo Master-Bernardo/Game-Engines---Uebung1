@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8454482627840249439}
   - component: {fileID: 8617204540300768394}
   - component: {fileID: 1543578224584207874}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RocketAmmoPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
