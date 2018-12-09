@@ -14,6 +14,7 @@ public class PlayerHUD : MonoBehaviour
     public Text gameOverHighscoreText;
     public Text gameOverScoreText;
     public GameObject gameOverScreen;
+    public GameObject reticle;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerHUD : MonoBehaviour
         waveCounter.gameObject.SetActive(false);
         enemyCounter.gameObject.SetActive(false);
         ammoText.gameObject.SetActive(false);
+        reticle.SetActive(false);
     }
 
     public void ShowHUD()
