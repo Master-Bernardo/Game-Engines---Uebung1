@@ -133,4 +133,18 @@ public class GameController : MonoBehaviour
     {
         interactables.Remove(interactable);
     }
+
+    public int GetRemainingEnemies()
+    {
+        int count = 0;
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            if (enemy.GetComponent<Unit>().alive)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }

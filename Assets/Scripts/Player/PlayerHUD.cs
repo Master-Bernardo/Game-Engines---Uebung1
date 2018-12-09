@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class PlayerHUD : MonoBehaviour
 {
     public HealthBar playerHealthBar;
-    public Text waveCounter;
+    public GameObject score;
     public Text scoreCounter;
+    public Text waveCounter;
+    public Text enemyCounter;
     public Text ammoText;
     public Text gameOverHighscoreText;
     public Text gameOverScoreText;
@@ -25,6 +27,7 @@ public class PlayerHUD : MonoBehaviour
         playerHealthBar.SetCurrentHealthRatio(GameController.Instance.playerHealth.GetCurrentHealthRatio());
         waveCounter.text = "Wave " + GameController.Instance.wave;
         scoreCounter.text = GameController.Instance.score.ToString();
+        enemyCounter.text = GameController.Instance.GetRemainingEnemies() + " Left";
     }
 
     public void ShowGameOverText()
@@ -33,9 +36,10 @@ public class PlayerHUD : MonoBehaviour
         gameOverHighscoreText.text = GameController.Instance.highscore.ToString();
         gameOverScoreText.text = GameController.Instance.score.ToString();
 
+        score.SetActive(false);
         playerHealthBar.gameObject.SetActive(false);
         waveCounter.gameObject.SetActive(false);
-        scoreCounter.gameObject.SetActive(false);
+        enemyCounter.gameObject.SetActive(false);
         ammoText.gameObject.SetActive(false);
     }
 
