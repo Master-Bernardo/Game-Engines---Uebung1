@@ -478,9 +478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a0fc6e189a87545b350a12f6317e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Rifle
-  damage: 1
+  weaponName: SMG
+  damage: 2
   isEquipped: 0
+  ammoMultiplier: 3
   shootPoint: {fileID: 3656086437440927310}
   automaticTrigger: 1
   fireRate: 0.075

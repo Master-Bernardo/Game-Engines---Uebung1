@@ -218,6 +218,6 @@ public class WeaponSystem : MonoBehaviour
 
     public void AddAmmo(AmmoType ammoType, int value)
     {
-        ammo[ammoType] += value;
+        ammo[ammoType] += (int)Mathf.Round(value * currentSelectedWeapon.ammoMultiplier);
     }
 }

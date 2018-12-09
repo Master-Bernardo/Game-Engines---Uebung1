@@ -708,9 +708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a0fc6e189a87545b350a12f6317e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Rifle
+  weaponName: Shotgun
   damage: 5
   isEquipped: 1
+  ammoMultiplier: 1.5
   shootPoint: {fileID: 6474853227364181011}
   automaticTrigger: 1
   fireRate: 0
