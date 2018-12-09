@@ -9,7 +9,9 @@ public class PlayerHUD : MonoBehaviour
     public Text waveCounter;
     public Text scoreCounter;
     public Text ammoText;
-    public Text gameOverText;
+    public Text gameOverHighscoreText;
+    public Text gameOverScoreText;
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,10 @@ public class PlayerHUD : MonoBehaviour
 
     public void ShowGameOverText()
     {
-        gameOverText.gameObject.SetActive(true);
+        gameOverScreen.SetActive(true);
+        gameOverHighscoreText.text = GameController.Instance.highscore.ToString();
+        gameOverScoreText.text = GameController.Instance.score.ToString();
+
         playerHealthBar.gameObject.SetActive(false);
         waveCounter.gameObject.SetActive(false);
         scoreCounter.gameObject.SetActive(false);
@@ -36,7 +41,7 @@ public class PlayerHUD : MonoBehaviour
 
     public void ShowHUD()
     {
-        gameOverText.gameObject.SetActive(false);
+        gameOverScreen.SetActive(false);
         playerHealthBar.gameObject.SetActive(true);
         waveCounter.gameObject.SetActive(true);
         scoreCounter.gameObject.SetActive(true);

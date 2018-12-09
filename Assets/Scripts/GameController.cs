@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
     public SpawnManager spawnManager;
     public float wave;
     public float score;
+    public float highscore;
 
     private HashSet<Unit> units; //this hashSet saves all fighters currently inGame
     private HashSet<Interactable> interactables; //interactables inGame
@@ -32,12 +34,13 @@ public class GameController : MonoBehaviour
             Destroy(gameObject); 
         }
    
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         units = new HashSet<Unit>();
         interactables = new HashSet<Interactable> ();
+        highscore = PlayerPrefs.GetFloat("highscore", 0);
     }
 
 
@@ -63,12 +66,14 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        SetHighscore();
         playerHUD.ShowGameOverText();
         spawnManager.Deactivate();
         currentState = State.GameOver;
     }
     public void ResetGame()
     {
+        /*
         wave = 0;
         score = 0;
         playerHealth.ResetHealth();
@@ -76,6 +81,17 @@ public class GameController : MonoBehaviour
         playerHUD.ShowHUD();
         spawnManager.Activate(); 
         currentState = State.Ingame;
+        */
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SetHighscore()
+    {
+        if (score > highscore)
+        {
+            highscore = score;
+            PlayerPrefs.SetFloat("highscore", highscore);
+        }
     }
 
     public void AddScore(float scoreValue)
