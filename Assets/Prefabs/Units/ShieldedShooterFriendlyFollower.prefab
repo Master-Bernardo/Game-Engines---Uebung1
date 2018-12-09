@@ -352,6 +352,7 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 5620948810106678229}
   gun: {fileID: 5620948810106678233}
+  shield: {fileID: 5620948810106678245}
 --- !u!1 &5620948810106678224
 GameObject:
   m_ObjectHideFlags: 0

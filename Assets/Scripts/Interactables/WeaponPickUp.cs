@@ -16,6 +16,7 @@ public class WeaponPickUp : Interactable
         currentPlayerWeapon.transform.localRotation = Quaternion.Euler(90f, 0, 0);
         currentPlayerWeapon.SetActive(true);
         weapon = currentPlayerWeapon;
+        weapon.GetComponent<Weapon>().isEquipped = false;
         // weapon.transform.position = Player....
     }
 }

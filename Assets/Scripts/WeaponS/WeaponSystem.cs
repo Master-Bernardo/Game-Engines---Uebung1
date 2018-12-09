@@ -76,9 +76,9 @@ public class WeaponSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)) StartReload();
 
-        if (currentSelectedWeapon is MissileWeapon)
+        if (currentSelectedWeapon is ProjectileWeapon)
         {
-            MissileWeapon selectedMissileWeapon = currentSelectedWeapon as MissileWeapon;
+            ProjectileWeapon selectedMissileWeapon = currentSelectedWeapon as ProjectileWeapon;
             switch (selectedMissileWeapon.ammoType)
             {
                 case AmmoType.Rifle:
@@ -115,7 +115,7 @@ public class WeaponSystem : MonoBehaviour
         if (currentSelectedWeapon != null)
         {
             currentSelectedWeapon.gameObject.SetActive(true);
-            if(currentSelectedWeapon is MissileWeapon)
+            if(currentSelectedWeapon is ProjectileWeapon)
             {
                 animator.SetBool("rifleSelected", true);
                 animator.SetBool("swordSelected", false);
@@ -151,17 +151,18 @@ public class WeaponSystem : MonoBehaviour
             sword.StartCutting();
         }
 
-
+        /*
         else if (currentSelectedWeapon is MissileWeapon)
         {
             MissileWeapon currentSelectedRifle = currentSelectedWeapon as MissileWeapon;
             currentSelectedRifle.Shoot();
         }
+        */
     }
 
     void StartReload()
     {
-        if (currentSelectedWeapon is MissileWeapon)
+        if (currentSelectedWeapon is ProjectileWeapon)
         {
             //if((currentSelectedWeapon as MissileWeapon).ammoType
             animator.SetBool("reloading", true);
@@ -171,11 +172,11 @@ public class WeaponSystem : MonoBehaviour
 
     IEnumerator ReloadingCoroutine()
     {
-        float reloadingTime = (currentSelectedWeapon as MissileWeapon).reloadTime;
+        float reloadingTime = (currentSelectedWeapon as ProjectileWeapon).reloadTime;
         yield return new WaitForSeconds((reloadingTime));
-        if (currentSelectedWeapon is MissileWeapon)
+        if (currentSelectedWeapon is ProjectileWeapon)
         {
-            (currentSelectedWeapon as MissileWeapon).Reload();
+            (currentSelectedWeapon as ProjectileWeapon).Reload();
         }
         animator.SetBool("reloading", false);
     }
@@ -185,7 +186,7 @@ public class WeaponSystem : MonoBehaviour
     {
         foreach(Weapon weapon in inventory)
         {
-            if (weapon is MissileWeapon) (weapon as MissileWeapon).Reset();
+            if (weapon is ProjectileWeapon) (weapon as ProjectileWeapon).Reset();
         }
     }
 
@@ -194,6 +195,7 @@ public class WeaponSystem : MonoBehaviour
     {
         GameObject currentWeapon = inventory[0].gameObject;
         inventory[0] = newWeapon.GetComponent<Weapon>();
+        newWeapon.GetComponent<Weapon>().isEquipped = true;
         newWeapon.transform.parent = weaponHolder.transform;
         newWeapon.transform.position = weaponHolder.transform.position;
         newWeapon.transform.localRotation = Quaternion.Euler(90f, 0, 0);

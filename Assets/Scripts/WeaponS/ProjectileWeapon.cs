@@ -2,21 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissileWeapon : Weapon
+public class ProjectileWeapon : Weapon
 {
     
     [SerializeField]
     protected Transform shootPoint; //point from which the projectiles are being shot
-
+    public bool automaticTrigger;
+    public float fireRate;
     public float reloadTime;
     public int magazineSize;
+    public float bloom;
     protected int currentMagazineAmmo;
+
+    private float fireRateTimer;
 
     public AmmoType ammoType;
 
     private void Start()
     {
         Reset();
+        fireRateTimer = fireRate;
+    }
+
+    private void Update()
+    {
+        fireRateTimer -= Time.deltaTime;
+        if (isEquipped)
+        {
+            if (automaticTrigger)
+            {
+                if (Input.GetMouseButton(0) && fireRateTimer <= 0)
+                {
+                    Shoot();
+                    fireRateTimer = fireRate;
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(0) && fireRateTimer <= 0)
+                {
+                    Shoot();
+                    fireRateTimer = fireRate;
+                }
+            }
+        }
     }
 
 

@@ -360,6 +360,7 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 8880688644519784673}
   gun: {fileID: 8880688644519784685}
+  shield: {fileID: 8880688644519784657}
 --- !u!136 &8880688644519784496
 CapsuleCollider:
   m_ObjectHideFlags: 0

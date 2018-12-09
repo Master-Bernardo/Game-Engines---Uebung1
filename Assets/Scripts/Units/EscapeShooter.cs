@@ -16,7 +16,8 @@ public class EscapeShooter : Unit
     public GameObject projectilePrefab;
     [Tooltip("from where does the projectile launch?")]
     public Transform shootingPoint;
-    public Transform gun; 
+    public Transform gun;
+    public Transform shield;
 
     public override void Start()
     {
@@ -74,13 +75,15 @@ public class EscapeShooter : Unit
         else
         {
             gun.gameObject.SetActive(false);
+            if(shield)
+            shield.gameObject.SetActive(false);
         }
     }
 
     //Shoots aprojectile at player
     void Shoot()
     {
-        Bullet projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(Random.Range(0, accuracy), Random.Range(0, accuracy), Random.Range(0, accuracy))).GetComponent<Bullet>();
+        Projectile projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(Random.Range(0, accuracy), Random.Range(0, accuracy), Random.Range(0, accuracy))).GetComponent<Projectile>();
         projectile.team = health.team;
         projectile.damage = attackDamage;
         projectile.startSpeed = 40;

@@ -1190,7 +1190,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 1
+    separateAxes: 0
   RotationModule:
     enabled: 0
     x:
@@ -4713,8 +4713,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8371f530cd75f94082192d9b424262e, type: 2}
-  - {fileID: 2100000, guid: e8371f530cd75f94082192d9b424262e, type: 2}
+  - {fileID: 2100000, guid: df3f2809c69be3b4c8c3985f8bcf5ad9, type: 2}
+  - {fileID: 2100000, guid: df3f2809c69be3b4c8c3985f8bcf5ad9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
