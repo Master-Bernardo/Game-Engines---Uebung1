@@ -117,16 +117,29 @@ public class PlayerController : MonoBehaviour {
 
             if (currentInteractableInReach != null) currentInteractableInReach.HideUI();
             currentInteractableInReach = null;
+
+            float nearestDistance = float.PositiveInfinity;
+            Interactable nearestInteractable = null;
+
             foreach (Interactable interactable in GameController.Instance.GetAllInteractables())
             {
-                if (Vector3.Distance(interactable.gameObject.transform.position, transform.position) < interactableScanDistance)
+                float currentDistance = Vector3.Distance(interactable.gameObject.transform.position, (transform.position + transform.forward));
+                if (currentDistance < interactableScanDistance)
                 {
-                    currentInteractableInReach = interactable;
+                    if (currentDistance < nearestDistance)
+                    {
+                        nearestDistance = currentDistance;
+                        nearestInteractable = interactable;
+                    }
+                        
                 }
             }
-            if(currentInteractableInReach!=null) currentInteractableInReach.ShowUI();
+
+            currentInteractableInReach = nearestInteractable;
+
+            if (currentInteractableInReach!=null) currentInteractableInReach.ShowUI();
         }
         
     }
- 
+
 }

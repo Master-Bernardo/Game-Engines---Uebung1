@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1509229056343166688}
   - component: {fileID: 5305358371670313912}
   - component: {fileID: 507539496096152817}
+  - component: {fileID: 2418465452043192185}
   - component: {fileID: 2614665566881468037}
   - component: {fileID: 6822727839393585415}
   - component: {fileID: 9010778427896615295}
-  - component: {fileID: 2418465452043192185}
   m_Layer: 11
   m_Name: Rocket
   m_TagString: Untagged
@@ -81,6 +81,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2418465452043192185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487047536855168691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7724bc5e29f25c14e90cbfdb80402f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6822727839393585415}
+  lifeTime: 20
+  startSpeed: 20
+  damage: 50
+  bulletSpark: {fileID: 0}
+  team: 0
+  explosionParticle: {fileID: 4177462936758304018, guid: b2401ab400b896c49bc05c97342cf5e1,
+    type: 3}
+  explosionRadius: 7
+  explosionForce: 300
 --- !u!135 &2614665566881468037
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -214,21 +236,3 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &2418465452043192185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8487047536855168691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7724bc5e29f25c14e90cbfdb80402f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpeed: 20
-  explosionParticle: {fileID: 4177462936758304018, guid: b2401ab400b896c49bc05c97342cf5e1,
-    type: 3}
-  explosionRadius: 7
-  explosionForce: 300
-  damage: 15

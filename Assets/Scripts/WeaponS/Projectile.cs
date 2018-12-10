@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     //public bool enemyBullet; //if this is true this is the bullet of the enemy
     public Team team; //which team shot this bullet? so the teams dont hit themselves
 
-    void Start()
+    protected virtual void Start()
     {
         rb.velocity = transform.forward * startSpeed;
     }
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Health>() != null)
         {
@@ -39,24 +39,6 @@ public class Projectile : MonoBehaviour
                 Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
                 Destroy(gameObject);
             }
-                /*
-                if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Friendly")
-                {
-                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-                    Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
-                    Destroy(gameObject);
-                }
-            }
-            else
-            {
-                if (collision.gameObject.tag == "Enemy")
-                {
-                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-                    Instantiate(bulletSpark, collision.contacts[0].point, transform.rotation);
-                    Destroy(gameObject);
-                }
-            }*/
-
         }
     }
 }

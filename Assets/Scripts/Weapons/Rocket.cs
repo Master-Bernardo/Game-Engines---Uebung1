@@ -2,29 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rocket : MonoBehaviour
+public class Rocket : Projectile
 {
-    private Rigidbody rb;
-    public float startSpeed;
     public GameObject explosionParticle;
     public float explosionRadius;
     public float explosionForce;
-    public float damage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * startSpeed;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag != "Player")
         {

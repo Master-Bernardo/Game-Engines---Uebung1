@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1834850362517693838}
-  interactableScannIntervall: 0.5
-  interactableScanDistance: 3
+  interactableScannIntervall: 0.2
+  interactableScanDistance: 2
 --- !u!114 &7924081073716438451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 0}
+  team: 0
 --- !u!114 &1834850361595032061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,8 +154,11 @@ MonoBehaviour:
   - {fileID: 2335783512308857009}
   - {fileID: 1834850361096205953}
   - {fileID: 0}
-  ammoDisplay: {fileID: 0}
+  weaponInfo: {fileID: 0}
   weaponHolder: {fileID: 9216167046308569475}
+  startRifleAmmo: 0
+  startRocketAmmo: 0
+  startLaserAmmo: 0
   animator: {fileID: 1834850362517693838}
 --- !u!1 &1834850361893411441
 GameObject:

@@ -5,6 +5,8 @@ using UnityEngine;
 public enum AmmoType
 {
     Rifle,
+    Smg,
     Rocket,
-    Laser
+    Laser,
+    Shotgun
 }
