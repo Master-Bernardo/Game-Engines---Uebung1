@@ -129,11 +129,12 @@ public class Unit : MonoBehaviour
     {
         if (Random.value < itemDropChance)
         {
-            int index = 0;
+            /*int index = 0;
             if (Random.value < 0.75)
             {
                 index = 1;
-            }
+            }*/
+            int index = Random.Range(0, droppableItems.Length);
             Rigidbody newItemRB = Instantiate(droppableItems[index], transform.position, transform.rotation).GetComponent<Rigidbody>();
             newItemRB.AddForce(new Vector3(0, 27500, 0));
             newItemRB.AddTorque(new Vector3(Random.Range(0, 10000), Random.Range(0, 10000), Random.Range(0, 10000)));

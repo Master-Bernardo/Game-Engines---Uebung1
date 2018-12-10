@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rocket Launcher
   damage: 50
-  isEquipped: 1
+  isEquipped: 0
   ammoMultiplier: 1
   shootPoint: {fileID: 3484533792952699211}
   automaticTrigger: 0

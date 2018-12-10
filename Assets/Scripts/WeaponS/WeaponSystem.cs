@@ -20,6 +20,8 @@ public class WeaponSystem : MonoBehaviour
     public int startRifleAmmo;
     public int startRocketAmmo;
     public int startLaserAmmo;
+    public int startSMGAmmo;
+    public int startShotgunAmmo;
 
     [Header("Animation")]
     public Animator animator;
@@ -51,6 +53,8 @@ public class WeaponSystem : MonoBehaviour
         ammo[AmmoType.Rifle] = startRifleAmmo;
         ammo[AmmoType.Rocket] = startRocketAmmo;
         ammo[AmmoType.Laser] = startLaserAmmo;
+        ammo[AmmoType.Smg] = startSMGAmmo;
+        ammo[AmmoType.Shotgun] = startShotgunAmmo;
     }
 
     // Update is called once per frame
@@ -89,6 +93,12 @@ public class WeaponSystem : MonoBehaviour
                     break;
                 case AmmoType.Laser:
                     weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Laser];
+                    break;
+                case AmmoType.Smg:
+                    weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Smg];
+                    break;
+                case AmmoType.Shotgun:
+                    weaponInfo.text = selectedMissileWeapon.weaponName + "\n" + selectedMissileWeapon.GetCurrentMagazineAmmo() + "/" + ammo[AmmoType.Shotgun];
                     break;
             }
 
@@ -200,6 +210,7 @@ public class WeaponSystem : MonoBehaviour
         newWeapon.transform.position = weaponHolder.transform.position;
         newWeapon.transform.localRotation = Quaternion.Euler(90f, 0, 0);
         if (currentSelectedWeapon == currentWeapon.GetComponent<Weapon>()) currentSelectedWeapon = inventory[0];
+        if (currentSelectedWeapon != inventory[0]) inventory[0].gameObject.SetActive(false);
 
         return currentWeapon;
     }

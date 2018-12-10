@@ -16,6 +16,9 @@ public class ProjectileWeapon : Weapon
 
     private float fireRateTimer;
 
+    [SerializeField]
+    protected GameObject projectile;
+
     public AmmoType ammoType;
 
     private void Start()

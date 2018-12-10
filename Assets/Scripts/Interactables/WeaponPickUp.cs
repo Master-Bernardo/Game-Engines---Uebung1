@@ -13,7 +13,7 @@ public class WeaponPickUp : Interactable
         GameObject currentPlayerWeapon = GameController.Instance.player.GetComponent<WeaponSystem>().ChangeMissileWeapon(weapon);
         currentPlayerWeapon.transform.parent = weaponHolder.transform;
         currentPlayerWeapon.transform.position = weaponHolder.transform.position;
-        currentPlayerWeapon.transform.localRotation = Quaternion.Euler(90f, 0, 0);
+        currentPlayerWeapon.transform.localRotation = Quaternion.Euler(0, 0, 0);
         currentPlayerWeapon.SetActive(true);
         weapon = currentPlayerWeapon;
         weapon.GetComponent<Weapon>().isEquipped = false;

@@ -664,7 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6474853227355204295}
   - component: {fileID: 6474853227355204294}
-  - component: {fileID: 6973719157764429021}
+  - component: {fileID: 5680623761298753933}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -696,7 +696,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6474853227355204298}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6973719157764429021
+--- !u!114 &5680623761298753933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,22 +705,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6474853227355204298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30a0fc6e189a87545b350a12f6317e31, type: 3}
+  m_Script: {fileID: 11500000, guid: 559f06264f6e8dc43b15e804811ab14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Shotgun
+  weaponName: 
   damage: 5
   isEquipped: 1
   ammoMultiplier: 1.5
   shootPoint: {fileID: 6474853227364181011}
-  automaticTrigger: 1
+  automaticTrigger: 0
   fireRate: 0
   reloadTime: 0.6
-  magazineSize: 10
+  magazineSize: 6
   bloom: 10
-  ammoType: 0
   projectile: {fileID: 6077626695293467236, guid: ac5c19d5ec8436946ad2050fb26c610c,
     type: 3}
+  ammoType: 4
+  shellSize: 5
 --- !u!1 &6474853227364181010
 GameObject:
   m_ObjectHideFlags: 0

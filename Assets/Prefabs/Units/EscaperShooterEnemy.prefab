@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!224 &3002531494416646434 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 6188893135649196263}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3002531494416646435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8955548562836015556, guid: 852efd77327a92a418b516876869b8e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 6188893135649196263}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c1bc518cc69e247abb174defcc65ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2666058036622929669
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,6 +30,24 @@ Transform:
   m_Father: {fileID: 4113672255844196035}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &3002531494416646434 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015557, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6188893135649196263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3002531494416646435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8955548562836015556, guid: 852efd77327a92a418b516876869b8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6188893135649196263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c1bc518cc69e247abb174defcc65ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4464853364684425635
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +345,10 @@ MonoBehaviour:
   droppableItems:
   - {fileID: 6935472094960417459, guid: 55fb737cf9906284a99aa3b92c345818, type: 3}
   - {fileID: 8454482627840249432, guid: 5f527bf624d1b0b41aa9acbb0150f03c, type: 3}
+  - {fileID: 8454482627840249432, guid: 745398eca9989784ca1d8687bcfcc2df, type: 3}
+  - {fileID: 8454482627840249432, guid: f1a5e468e1c61ab4aa7d945d7f8cf757, type: 3}
+  - {fileID: 8454482627840249432, guid: fab292ead626078418c1670125aa8aed, type: 3}
+  - {fileID: 8454482627840249432, guid: 6908bdb13ebc0a048896d183664d5600, type: 3}
   enemyDetectingRadius: 100
   alive: 1
   deathParticle: {fileID: 1151571352188961962, guid: 13bd4852d51a0b04ba2bd195442f5761,
@@ -359,6 +363,7 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 985790475041324391}
   gun: {fileID: 4113672255844196035}
+  shield: {fileID: 0}
 --- !u!136 &6835022439859004043
 CapsuleCollider:
   m_ObjectHideFlags: 0

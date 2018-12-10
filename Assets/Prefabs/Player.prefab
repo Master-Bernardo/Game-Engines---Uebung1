@@ -156,9 +156,11 @@ MonoBehaviour:
   - {fileID: 0}
   weaponInfo: {fileID: 0}
   weaponHolder: {fileID: 9216167046308569475}
-  startRifleAmmo: 0
-  startRocketAmmo: 0
-  startLaserAmmo: 0
+  startRifleAmmo: 20
+  startRocketAmmo: 3
+  startLaserAmmo: 50
+  startSMGAmmo: 100
+  startShotgunAmmo: 15
   animator: {fileID: 1834850362517693838}
 --- !u!1 &1834850361893411441
 GameObject:

@@ -585,9 +585,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: UnitsThrower
   damage: 0
+  isEquipped: 0
+  ammoMultiplier: 1
   shootPoint: {fileID: 4903601562138845396}
+  automaticTrigger: 0
+  fireRate: 0
   reloadTime: 1
   magazineSize: 5
+  bloom: 0
   ammoType: 1
   unitPrefab: {fileID: 8880688644519784696, guid: 4e35d7c53d50b79418d9a24bf386ad00,
     type: 3}

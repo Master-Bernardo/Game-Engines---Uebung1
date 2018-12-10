@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Rifle : ProjectileWeapon
 {
-    [SerializeField]
-    GameObject projectile;
+    
 
     public override void Shoot()
     {
