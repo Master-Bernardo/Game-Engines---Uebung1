@@ -12,7 +12,7 @@ public class Exploder : Unit
 
     public GameObject explosionParticle;
 
-    public override void Update()
+    protected override void Update()
     {
         base.Update();
         if (alive)
@@ -36,7 +36,7 @@ public class Exploder : Unit
         }
     }
 
-    public void Explode()
+    protected void Explode()
     {
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, explosionRadius, transform.forward);
 

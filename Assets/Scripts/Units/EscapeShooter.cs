@@ -19,16 +19,15 @@ public class EscapeShooter : Unit
     public Transform gun;
     public Transform shield;
 
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
-        agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
 
         nextShootingTime = Time.time + shootingIntervall;
     }
 
-    public override void Update()
+    protected override void Update()
     {
         base.Update();
         
@@ -81,7 +80,7 @@ public class EscapeShooter : Unit
     }
 
     //Shoots aprojectile at player
-    void Shoot()
+    protected virtual void Shoot()
     {
         Projectile projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(Random.Range(0, accuracy), Random.Range(0, accuracy), Random.Range(0, accuracy))).GetComponent<Projectile>();
         projectile.team = health.team;

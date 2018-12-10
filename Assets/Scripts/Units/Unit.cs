@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour
     public float fightingUpdateIntervall = 0.5f;
     float nextFightingUpdateTime;
    
-    public virtual void Start()
+    protected virtual void Start()
     {
         GameController.Instance.AddUnit(this); //add this unit to the global unit collection
         rend = transform.GetComponentInChildren<Renderer>();
@@ -44,7 +44,7 @@ public class Unit : MonoBehaviour
         //Debug.Log(nextFightingUpdateTime);
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         if(alive)
         {

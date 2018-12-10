@@ -15,7 +15,7 @@ public class Rifle : ProjectileWeapon
                 shootPoint.eulerAngles.y + Random.Range(-bloom, bloom), 
                 shootPoint.eulerAngles.z)).GetComponent<Projectile>();
             bullet.damage = damage;
-            bullet.team = Team.Friendly;
+            bullet.team = team;
             currentMagazineAmmo -= 1;
         }
     }

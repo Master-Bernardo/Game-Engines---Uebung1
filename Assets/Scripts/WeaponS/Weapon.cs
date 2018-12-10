@@ -8,4 +8,5 @@ public class Weapon : MonoBehaviour
     public float damage; //could be expanded later to diffeent damages  
     public bool isEquipped = true;
     public float ammoMultiplier=1;
+    public Team team;
 }
