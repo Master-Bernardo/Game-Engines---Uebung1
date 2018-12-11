@@ -8,7 +8,7 @@ public class HealthPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("Destroy");
     }
 
     // Update is called once per frame
@@ -26,5 +26,11 @@ public class HealthPickUp : MonoBehaviour
             collider.GetComponent<Health>().RestoreHealth(healthAmount);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(60);
+        Destroy();
     }
 }

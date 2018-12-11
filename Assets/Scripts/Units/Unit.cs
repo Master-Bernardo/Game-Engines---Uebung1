@@ -161,7 +161,7 @@ public class Unit : MonoBehaviour
         {
             if (enemy.health.team != health.team && enemy.health.team != Team.Neutral)
             {
-                if (enemy.alive == true)
+                if (enemy.alive == true && enemy.isActiveAndEnabled)
                 {
                     float currentDistance = Vector3.Distance(enemy.gameObject.transform.position, transform.position);
                     if (currentDistance < nearestDistance && currentDistance < enemyDetectingRadius)

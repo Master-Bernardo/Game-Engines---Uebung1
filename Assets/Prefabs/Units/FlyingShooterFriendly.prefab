@@ -451,7 +451,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 12
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -502,7 +502,7 @@ MonoBehaviour:
   - {fileID: 8454482627840249432, guid: f1a5e468e1c61ab4aa7d945d7f8cf757, type: 3}
   - {fileID: 8454482627840249432, guid: fab292ead626078418c1670125aa8aed, type: 3}
   - {fileID: 8454482627840249432, guid: 6908bdb13ebc0a048896d183664d5600, type: 3}
-  enemyDetectingRadius: 100
+  enemyDetectingRadius: 700
   alive: 1
   deathParticle: {fileID: 1151571352188961962, guid: 13bd4852d51a0b04ba2bd195442f5761,
     type: 3}

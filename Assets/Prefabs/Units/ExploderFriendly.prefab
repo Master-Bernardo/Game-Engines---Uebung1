@@ -99,7 +99,7 @@ MonoBehaviour:
   droppableItems:
   - {fileID: 6935472094960417459, guid: 55fb737cf9906284a99aa3b92c345818, type: 3}
   - {fileID: 8454482627840249432, guid: 5f527bf624d1b0b41aa9acbb0150f03c, type: 3}
-  enemyDetectingRadius: 100
+  enemyDetectingRadius: 700
   alive: 1
   deathParticle: {fileID: 1151571352188961962, guid: 13bd4852d51a0b04ba2bd195442f5761,
     type: 3}

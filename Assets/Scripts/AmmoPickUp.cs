@@ -9,7 +9,7 @@ public class AmmoPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine("Destroy");
     }
 
     // Update is called once per frame
@@ -28,5 +28,11 @@ public class AmmoPickUp : MonoBehaviour
                 
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(60);
+        Destroy();
     }
 }

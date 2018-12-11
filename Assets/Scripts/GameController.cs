@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
     {
         SetHighscore();
         playerHUD.ShowGameOverText();
-        spawnManager.Deactivate();
+        if(spawnManager!=null)spawnManager.Deactivate();
         currentState = State.GameOver;
     }
     public void ResetGame()
