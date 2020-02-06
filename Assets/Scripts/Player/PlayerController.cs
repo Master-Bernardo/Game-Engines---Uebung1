@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerMover mover;
     public Animator animator;
 
+    //scanning for interactables
     public float interactableScannIntervall; //how often do we check for interactables
     float nextInteractableScannTime;
     public float interactableScanDistance; // how distant can an interactable be to activate it
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 
         //Final Movement Vector
         Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized;
-
+        Debug.Log("actual velocity: " + _velocity);
 
         if (Input.GetKey(KeyCode.LeftShift) && _zMov > 0)
         {
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour {
 
         //Calculate Rotationas a 3D Vector: (turning around y axis only) the rest of the rotation is only on the camera
         float _yRot = Input.GetAxisRaw("Mouse X");
-        Vector3 _rotation = new Vector3(0f, _yRot, 0f) * mouseSensitivty;
+        Vector3 _rotation = new Vector3(0f, _yRot, 0f) * mouseSensitivty*2;
 
         //apply Rotation
         mover.Rotate(_rotation);
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour {
             float nearestDistance = float.PositiveInfinity;
             Interactable nearestInteractable = null;
 
-            foreach (Interactable interactable in GameController.Instance.GetAllInteractables())
+            foreach (Interactable interactable in ArenaGameController.Instance.GetAllInteractables())
             {
                 float currentDistance = Vector3.Distance(interactable.gameObject.transform.position, (transform.position + transform.forward));
                 if (currentDistance < interactableScanDistance)

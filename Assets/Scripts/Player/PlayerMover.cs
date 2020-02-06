@@ -110,6 +110,7 @@ public class PlayerMover : MonoBehaviour
     //runs every Physics iteration -> perform movment here
     private void FixedUpdate()
     {
+        Debug.Log("velocity: " + velocity);
         PerformMovement();
         PerformRotation();
     }
@@ -127,11 +128,13 @@ public class PlayerMover : MonoBehaviour
                 if (sprint)
                 {
                     //if(rb.velocity.magnitude<maxSprintSpeed) rb.AddForce(rb.position + velocity * Time.fixedDeltaTime * 1000 * sprintSpeed);   //better than just add force - or rb.MovePosition?
-                    if (rb.velocity.magnitude < maxSprintSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * sprintSpeed);
+                    //if (rb.velocity.magnitude < maxSprintSpeed)
+                    rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * sprintSpeed);
                 }
                 else
                 {
-                    if (new Vector3(rb.velocity.x,0f,rb.velocity.z).magnitude < maxSpeed) rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
+                    //if (new Vector3(rb.velocity.x,0f,rb.velocity.z).magnitude < maxSpeed)
+                    rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime  * speed);  //rb.AddForce(velocity * Time.fixedDeltaTime); //works also, but we have to increace speed and drag
                 }
             }
             if (jump)

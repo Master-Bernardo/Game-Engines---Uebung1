@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.AddInteractable(this);
+        ArenaGameController.Instance.AddInteractable(this);
         HideUI();
     }
 
@@ -36,9 +36,9 @@ public class Interactable : MonoBehaviour
 
      public void Interact()
     {
-        if(GameController.Instance.score >= cost)
+        if(ArenaGameController.Instance.score >= cost)
         {
-            GameController.Instance.score -= cost;
+            ArenaGameController.Instance.score -= cost;
             ExecuteInteractAction();
         }
         

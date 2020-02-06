@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum PlayerHUDMode
+{
+    Arena,
+    Default
+}
+
 public class PlayerHUD : MonoBehaviour
 {
     public HealthBar playerHealthBar;
     public GameObject score;
+    public GameObject waveInfo;
     public Text scoreCounter;
     public Text waveCounter;
     public Text enemyCounter;
@@ -15,27 +22,37 @@ public class PlayerHUD : MonoBehaviour
     public Text gameOverScoreText;
     public GameObject gameOverScreen;
     public GameObject reticle;
+    public PlayerHUDMode playerHUDMode;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(playerHUDMode == PlayerHUDMode.Arena)
+        {
+            score.SetActive(true);
+            waveInfo.SetActive(true);
+        }
+        else
+        {
+            score.SetActive(false);
+            waveInfo.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealthBar.SetCurrentHealthRatio(GameController.Instance.playerHealth.GetCurrentHealthRatio());
-        waveCounter.text = "Wave " + GameController.Instance.wave;
-        scoreCounter.text = GameController.Instance.score.ToString();
-        enemyCounter.text = GameController.Instance.GetRemainingEnemies() + " Left";
+        playerHealthBar.SetCurrentHealthRatio(ArenaGameController.Instance.playerHealth.GetCurrentHealthRatio());
+        waveCounter.text = "Wave " + ArenaGameController.Instance.wave;
+        scoreCounter.text = ArenaGameController.Instance.score.ToString();
+        enemyCounter.text = ArenaGameController.Instance.GetRemainingEnemies() + " Left";
     }
 
     public void ShowGameOverText()
     {
         gameOverScreen.SetActive(true);
-        gameOverHighscoreText.text = GameController.Instance.highscore.ToString();
-        gameOverScoreText.text = GameController.Instance.score.ToString();
+        gameOverHighscoreText.text = ArenaGameController.Instance.highscore.ToString();
+        gameOverScoreText.text = ArenaGameController.Instance.score.ToString();
 
         score.SetActive(false);
         playerHealthBar.gameObject.SetActive(false);

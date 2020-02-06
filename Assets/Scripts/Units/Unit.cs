@@ -35,7 +35,7 @@ public class Unit : MonoBehaviour
    
     protected virtual void Start()
     {
-        GameController.Instance.AddUnit(this); //add this unit to the global unit collection
+        ArenaGameController.Instance.AddUnit(this); //add this unit to the global unit collection
         rend = transform.GetComponentInChildren<Renderer>();
         alive = true;
         rb = GetComponent<Rigidbody>();
@@ -80,9 +80,9 @@ public class Unit : MonoBehaviour
         {
             if (health.team == Team.Enemy)
             {
-                if (GameController.Instance.player)
+                if (ArenaGameController.Instance.player)
                 {
-                    target = GameController.Instance.player.transform;
+                    target = ArenaGameController.Instance.player.transform;
                 }
             }
             else
@@ -104,7 +104,7 @@ public class Unit : MonoBehaviour
            }
            else
            {
-                agent.SetDestination(GameController.Instance.player.transform.position);
+                agent.SetDestination(ArenaGameController.Instance.player.transform.position);
            }
             agent.updateRotation = true;
             agent.isStopped = false;
@@ -117,8 +117,8 @@ public class Unit : MonoBehaviour
         {
             Instantiate(deathParticle, transform.position, transform.rotation);
         }
-        if (health.team == Team.Enemy) GameController.Instance.AddScore(scoreValue);
-        GameController.Instance.RemoveUnit(this);
+        if (health.team == Team.Enemy) ArenaGameController.Instance.AddScore(scoreValue);
+        ArenaGameController.Instance.RemoveUnit(this);
         SpawnRandomItem();       
         StartFloating();
         health.DisableHealthBar();
@@ -152,7 +152,7 @@ public class Unit : MonoBehaviour
 
     protected Unit GetNearestEnemy()
     {
-        HashSet<Unit> enemies = GameController.Instance.GetAllUnits();
+        HashSet<Unit> enemies = ArenaGameController.Instance.GetAllUnits();
 
         Unit nearestEnemy = null;
         float nearestDistance = float.PositiveInfinity;
@@ -175,9 +175,9 @@ public class Unit : MonoBehaviour
 
         if(health.team == Team.Enemy)
         {
-            if (GameController.Instance.player)
+            if (ArenaGameController.Instance.player)
             {
-                float currentDistance = Vector3.Distance(GameController.Instance.player.transform.position, transform.position);
+                float currentDistance = Vector3.Distance(ArenaGameController.Instance.player.transform.position, transform.position);
                 if (currentDistance < nearestDistance)
                 {
                     nearestDistance = currentDistance;
